@@ -1,0 +1,7 @@
+
+ /* Babel is the tool used to convert futuristic ES6 into present day JavaScript. It needs to be configured with presets. Vue requires es2015 preset (which supports the next version of EcmaScript/JavaScript) and stage-0 (I have no idea what this does). */
+
+{
+  "presets": ["es2015", "stage-0"],
+  "plugins": ["transform-runtime"]
+}
