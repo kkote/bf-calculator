@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+
+<meta charset="utf-8">
+<!-- <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/> -->
+<link rel="stylesheet" href="css/kickstart.css" media="all" /> <!-- KICKSTART -->
+</head>
+<body>
+
+<div class="signupform">
+<h2>Bodyfat Calculator</h2>
+
+
+  <div class="container" style="display: block;">
+    <div class ="col_4_columns">
+      <h4>Your Stats</h4>
+
+            <form id="calcForm" class="vertical">
+
+          <div class="input-group">
+            <input type="number" id="neckInputId"
+            name="necksInput"
+             placeholder="Neck" required=""
+            onsubmit="myScript" value="12">
+          </div>
+
+          <div class="input-group">
+            <input type="number" id="hipsInputId"
+            name="hipsInput"
+             placeholder="Hips" required=""
+             value="36">
+          </div>
+          <div class="input-group">
+            <input type="number" id="heightInputId"
+            name="heightInput"
+             placeholder="Height 63" required="" value="63" >
+          </div>
+          <div class="input-group">
+            <input type="number" id="waistInputId"
+            name="waistInput"
+             placeholder="Waist" required="" value="27">
+          </div>
+          <!-- <input type="submit" /> -->
+            <button class="btn btn-danger btn-block" type="submit">Submit</button >
+              <!-- <element onsubmit="myScript"> -->
+        </form>
+
+    </div>
+<div class="col_4_columns">
+  <h4><div id="displayInput">
+
+  </div></h4><div id="displayInput">
+
+  </div>
+
+  <ul class="alt">
+
+  <li>Banana</li>
+  <li>Orange</li>
+  <li>Pear</li>
+  </ul>
+
+</div>
+
+
+    <!-- //endof container -->
+	</div>
+
+</div>
+
+
+
+	<script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/kickstart.js"></script> <!-- KICKSTART -->
+	</body>
+</html>
