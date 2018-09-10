@@ -1,0 +1,22 @@
+*node_modules
+
+
+#api key
+*.env
+
+node_modules/
+
+config.js*
+test.js*
+
+.npm
+npm-debug.log*
+.node_repl_history
+
+
+logs
+*.logs
+
+
+
+.env.sample
