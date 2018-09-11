@@ -6,6 +6,14 @@
 body {
   background-color: #f8f8f8;
 }
+
+.form-group{
+  padding:10px;
+
+}
+
+
+
 #wrapper {
   width: 100%;
 }
@@ -14,6 +22,13 @@ body {
   min-height: 568px;
   background-color: white;
 }
+
+#page-wrapper-new {
+  padding: 0 35px;
+  min-height: 568px;
+  background-color: white;
+}
+
 @media (min-width: 768px) {
   #page-wrapper {
     position: inherit;

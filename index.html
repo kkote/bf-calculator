@@ -6,116 +6,225 @@
 
 <meta charset="utf-8">
 <!-- <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/> -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link href="css/sb-admin-2.css" rel="stylesheet">
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
 
 </head>
 <body>
 
 
-      <div class="row">
-          <div class="col-lg-12">
-              <h1 class="page-header">BodyFat Calculator</h1>
-          </div>
-          <!-- /.col-lg-12 -->
-      </div>
 
+  <div id="page-wrapper-new">
 
-
-      <div class="row">
-    <div class="col-lg-8">
-      <div class="panel panel-default">
-        <i class="fa fa-bar-chart-o fa-fw"></i> Your Stats
-        <div class="panel-header">
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+            <h1 class="page-header">BodyFat Calculator</h1>
+            <!-- output in header -->
+            <!-- <div id="displayInput">
+            </div> -->
 
         </div>
-        <div class="panel-body">
+        <!-- /.col-lg-12 -->
+    </div>
 
 
-          <div class="card card-register mx-auto mt-5">
-            <div class="card-header">Enter in Inches</div>
-            <div class="card-body">
+    <!-- input form -->
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <div class="panel panel-default">
 
-                  <form id="calcForm" class="vertical">
-                    <div class="form-group">
+      <div class="panel-heading">
+        <i class="fa fa-bar-chart-o fa-fw"></i> Your Stats
+      </div>
+      <div class="panel-body">
 
-                      <div class="form-row">
-                        <div class="col-md-6">
-                          <div class="form-label-group">
-                            <input type="number" id="neckInputId"
-                            name="necksInput" class="form-control"
-                             placeholder="Neck" required=""
-                            onsubmit="myScript" value="12">
-                            <label for="inputPassword">Neck</label>
-                          </div>
+
+        <div class="card card-register mx-auto mt-5">
+          <div class="card-header">Enter in Inches</div>
+          <div class="card-body">
+
+                <form id="calcForm" class="vertical">
+                  <div class="form-group">
+
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <div class="form-label-group ">
+
+                          <input  type="number" id="neckInputId"
+                          name="necksInput" class="form-control"
+                           placeholder="Neck" required=""
+                          onsubmit="myScript" value="12">
+                          <label for="neckInputId">Neck</label>
+
                         </div>
                       </div>
-                      <div class="form-row">
-                        <div class="col-md-6">
-                          <div class="form-label-group">
-                            <input type="number" id="hipsInputId"
-                            name="hipsInput" class="form-control"
-                             placeholder="Hips" required=""
-                             value="36"><label for="inputPassword">Hips</label>
-
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="form-row">
-                        <div class="col-md-6">
-                          <div class="form-label-group">
-                            <input type="number" id="heightInputId"
-                            name="heightInput" class="form-control"
-                             placeholder="Height 63" required="" value="63" >
-                             <label for="inputPassword">Height</label>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-label-group">
-                            <input type="number" id="waistInputId"
-                            name="waistInput" class="form-control"
-                             placeholder="Waist" required="" value="27"><label for="inputPassword">Waist</label>
-                          </div>
-                        </div>
-                      </div>
-
                     </div>
-                <!-- end from group -->
-                          <!-- <input type="submit" /> -->
-                    <button class="btn btn-danger btn-block" type="submit">Submit</button >
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <div class="form-label-group">
+                          <input type="number" id="hipsInputId"
+                          name="hipsInput" class="form-control"
+                           placeholder="Hips" required=""
+                           value="36"><label for="hipsInputId">Hips</label>
 
-                  </form>
+                        </div>
+                      </div>
+                    </div>
 
-            <!-- end card body -->
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <div class="form-label-group">
+                          <input type="number" id="heightInputId"
+                          name="heightInput" class="form-control"
+                           placeholder="Height 63" required="" value="63" >
+                           <label for="heightInputId">Height</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-label-group">
+                          <input type="number" id="waistInputId"
+                          name="waistInput" class="form-control"
+                           placeholder="Waist" required="" value="27"><label for="waistInputId">Waist</label>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+              <!-- end from group -->
+                        <!-- <input type="submit" /> -->
+                  <button class="btn btn-danger btn-block" type="submit">Submit</button >
+
+                </form>
+
+          <!-- end card body -->
+          </div>
+
+        </div>
+
+        <!-- end panel body -->
+      </div>
+      <!-- end panel-default -->
+    </div>
+
+    </div>
+
+
+      <!-- body stat side panel-->
+
+      <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <i class="fa fa-bell fa-fw"></i>Your Input
+              </div>
+              <!-- /.panel-heading -->
+              <div class="panel-body">
+                  <div class="list-group">
+                    <!-- bf percentage output -->
+                    <div class="list-group-item">
+                      BF percentage <span class="pull-right text-muted small" id="displayInput"><em></em>
+                        </span>
+                    </div>
+
+                      <div class="list-group-item">
+                        Healthy bf  <span class="pull-right text-muted small"><em>18-25</em>
+                          </span>
+                      </div>
+
+                      <div class="list-group-item">
+                        BMI  <span class="pull-right text-muted small"><em>120</em>
+                          </span>
+                      </div>
+
+                      <div class="list-group-item">
+                        Healthy BMI  <span class="pull-right text-muted small"><em>15-30</em>
+                          </span>
+                      </div>
+
+                  </div>
+                  <!-- /.list-group -->
+
+              </div>
+              <!-- /.panel-body -->
+          </div>
+
+
+      </div>
+      <!-- /.col-lg-4 -->
+
+
+
+      <!-- end of input output row -->
+    </div>
+
+
+
+
+
+
+    <!-- list delete edit output area -->
+
+    <!-- /.panel -->
+    <div class="row">
+      <div class="col-xs-10 col-sm-10 col-md-10">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>Timeline
+                <div class="pull-right">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default btn-xs">Edit</button>
+                      <button type="button" class="btn btn-default btn-xs">Delete</button>
+                    </div>
+                </div>
             </div>
 
-          </div>
+            <!-- Use as chart for database results -->
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-10 col-sm-10 col-md-10">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Weight</th>
+                                        <th>BF %</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10/9/17</td>
+                                        <td>120</td>
+                                        <td>21.2</td>
+                                        <td><i class="far fa-edit"></i></td>
+                                        <td><i class="far fa-trash-alt"></i></td>
 
-          <!-- end panel body -->
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                    </div>
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.panel-body -->
         </div>
-        <!-- end panel-default -->
       </div>
+
 
 
     </div>
+
+
+
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="col_4_columns">
-    <h4><div id="displayInput">
-    </div></h4>
-  </div>
 
 
 
