@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>BF Calc</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -52,29 +52,6 @@
             </div>
             <!-- /.navbar-header -->
 
-            <ul class="nav navbar-top-links navbar-right">
-
-              <!-- Top nav signin -->
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-
 <!-- Side Nav -->
 
             <div class="navbar-default sidebar" role="navigation">
@@ -94,24 +71,26 @@
                         <li>
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
-                        <li>
+
+                        <!-- Charts -->
+                        <!-- <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="flot.html">Flot Charts</a>
-                                </li>
                                 <li>
                                     <a href="morris.html">Morris.js Charts</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
+
+                        <!-- Tables
                         <li>
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -138,13 +117,8 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <a href="login.html"><i class="fa fa-files-o fa-fw"></i> Login Page<span class="fa arrow"></span></a>
 
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>
                             <!-- /.nav-second-level -->
                         </li>
                     </ul>
@@ -201,19 +175,18 @@
                     <div class="form-row">
                       <div class="col-md-6">
                         <div class="form-label-group">
-                          <input type="text" id="firstName" class="form-control" placeholder="Weight" required="required" autofocus="autofocus">
-                          <label for="firstName">Weight</label>
+                          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+                          <label for="inputPassword">Waist</label>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-label-group">
-                          <input type="text" id="lastName" class="form-control" placeholder="Last name" required="required">
-                          <label for="lastName">Neck</label>
+                          <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required">
+                          <label for="confirmPassword">Hips</label>
                         </div>
                       </div>
                     </div>
                   </div>
-
                   <div class="form-group">
                     <div class="form-row">
                       <div class="col-md-6">
@@ -230,12 +203,12 @@
                       </div>
                     </div>
                   </div>
-                  <a class="btn btn-primary btn-block" href="login.html">Register</a>
+                  <a class="btn btn-primary btn-block" href="login.html">Calculate</a>
                 </form>
-                <div class="text-center">
+                <!-- <div class="text-center">
                   <a class="d-block small mt-3" href="login.html">Login Page</a>
 
-                </div>
+                </div> -->
               </div>
             </div>
                         </div>
@@ -250,18 +223,11 @@
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i>Past Measurements
+                            <i class="fa fa-bar-chart-o fa-fw"></i>Stats
                             <div class="pull-right">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                                        Actions
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu pull-right" role="menu">
-                                        <li><a href="#">Action</a>
-                                        </li>
-
-                                    </ul>
+                                  <button type="button" class="btn btn-default btn-xs">Edit</button>
+                                  <button type="button" class="btn btn-default btn-xs">Delete</button>
                                 </div>
                             </div>
                         </div>
@@ -334,9 +300,14 @@
                                     <span class="pull-right text-muted small"><em>120</em>
                                     </span>
                                 </a>
+                                <div class="list-group-item">
+                                  Your Weight  <span class="pull-right text-muted small"><em>120</em>
+                                    </span>
+                                </div>
+                              
                             </div>
                             <!-- /.list-group -->
-  
+
                         </div>
                         <!-- /.panel-body -->
                     </div>

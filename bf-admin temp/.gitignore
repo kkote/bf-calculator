@@ -25,5 +25,9 @@ logs
 *.logs
 
 
-
+/pages
+/dist
+/less
+/vendor
+test.html
 .env.sample

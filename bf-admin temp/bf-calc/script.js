@@ -9,10 +9,12 @@ window.onload = function(){
 
 
   formId.onsubmit = function(){
+
     function Log10(X){
        return( Math.log(X) / Math.log(10) );
     };
     // retrieving input data after submit
+    // debugger;
     var neckNum = document.getElementById("neckInputId").value;
     var hipNum = document.getElementById("hipsInputId").value;
     var heightNum = document.getElementById("heightInputId").value;
@@ -49,74 +51,9 @@ document.getElementById("displayInput").innerHTML = calculatedStats.toPrecision(
 
 
 
-  //
-  //   for (i = 0; i < formId.length - 1 ;i++) {
-  //
-  //
-  //   var input = formId.elements[i].name;
-  //   var value = formId.elements[i].value;
-  //   console.log(input, value);
-  //
-  //   obj[i] = {
-  //     [input] : [value]
-  //   };
-  //
-  // };
-  //
-  // console.log(obj);
-
-
-
     return false
   }
 
 
 
-
-
 }
-
-
-
-
-  // function usersInput() {
-  //   var users = document.getElementById("users").value;
-  //         }
-  // usersInput();
-  // console.log(users);
-
-
-
-
-   // document.write(document.getElementById("activity_level").value + "</br>");
-
-  // <form onsubmit="myFunction()">
-  //   Enter name: <input type="text">
-  //   <input type="submit">
-  // </form>
-
-
-// function captureForm(e){
-//   // var inputText = document.getElementsByTagName("input");
-//
-//
-
-
-// <div id="yourOutputDiv"></div>
-
-// var results = document.getElementById("activity_level").value + "</br>" +
-//               document.getElementById("target_bodyfat_pct").value +
-//               document.getElementById("tw").value + "</br>";
-//
-//
-
-
-
-// object.onclick = function(){myScript};
-//
-// for each input in form
-// console.log input
-// put id and input in object
-
-
-// object.addEventListener("click", myScript);
