@@ -48,9 +48,9 @@
                   <div class="form-group">
 
                     <div class="form-row">
-                      <div class="form-label-group ">
-                        <input name = "gender" type = "radio" value = "Male"> Male
-                        <input name = "gender" type = "radio" value = "Female"> Female
+                      <div class="form-label-group " id="maleOrFemale">
+                        <input name = "gender" type = "radio" value = "Male" id="maleId"> Male
+                        <input name = "gender" type = "radio" value = "Female" id="femaleId"> Female
                       </div>
                     </div>
 
@@ -99,19 +99,37 @@
                     </div>
 
                     <div class="form-row">
-                      <div class="col-md-6">
+                      <!-- <div class="col-md-6">
                         <div class="form-label-group">
                           <input type="number" id="heightInputId"
                           name="heightInput" class="form-control"
                            placeholder="Height 63" required="" value="63" >
                            <label for="heightInputId">Height</label>
                         </div>
-                      </div>
+                      </div> -->
                       <div class="col-md-6">
                         <div class="form-label-group">
                           <input type="number" id="waistInputId"
                           name="waistInput" class="form-control"
                            placeholder="Waist" required="" value="27"><label for="waistInputId">Waist</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <div class="form-label-group">
+                          <input type="number" id="feetInputId"
+                          name="feetInput" class="form-control"
+                           placeholder="5" required="" value="5" >
+                           <label for="feetInputId">Feet</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-label-group">
+                          <input type="number" id="inchInputId"
+                          name="inchInput" class="form-control"
+                           placeholder="Inch" required="" value="3"><label for="inchInputId">Inch</label>
                         </div>
                       </div>
                     </div>
@@ -156,17 +174,17 @@
                     </div>
 
                       <div class="list-group-item">
-                        Healthy bf  <span class="pull-right text-muted small" id="displayBfRange"><em></em>
+                        Bf Range <span class="pull-right text-muted small" id="displayBfRange"><em></em>
                           </span>
                       </div>
 
                       <div class="list-group-item">
-                        BMI  <span class="pull-right text-muted small" id="displayWeight"><em></em>
+                        BMI  <span class="pull-right text-muted small" id="displayBmi"><em></em>
                           </span>
                       </div>
 
                       <div class="list-group-item">
-                        Healthy BMI  <span class="pull-right text-muted small" id="displayWeightRange"><em></em>
+                         BMI Range <span class="pull-right text-muted small" id="displayBmiRange"><em></em>
                           </span>
                       </div>
 
