@@ -59,6 +59,43 @@ window.onload = function(){
   }
 
 
+  function calculateBfMale(neck, height, waist){
+    var percentFat = ((86.010 * (Log10(waist - neck))) - (70.041 * (Log10(height))) + 36.76);
+
+    return percentFat
+  };
+
+
+
+
+  if (genderId == "Male"){
+    var MaleBf= calculateBfMale(neckNum, feetPlusInch, waistNum);
+    var bfm = MaleBf.toPrecision(3);
+    console.log("male by is " + bfm);
+  }  else {
+    var calculatedStats = calculate(neckNum, hipNum, feetPlusInch, waistNum);
+  
+    var bf =calculatedStats.toPrecision(3);
+    console.log(bf);
+  };
+
+
+
+
+
+
+  // function calculateBfMale(neck, height, waist){
+  //   var percentFat = ((86.010 * (Log10(waist - neck))) - (70.041 * (Log10(height))) + 36.76);
+  //
+  //   return percentFat
+  // };
+  //
+  // var MaleBf= calculateBfMale(neckNum, feetPlusInch, waistNum);
+  // var bfm = MaleBf.toPrecision(3);
+  // console.log("male by is " + bfm);
+
+
+
   weightBmi = (weightNum);
   heightBmi = (feetPlusInch*feetPlusInch);
   // heightBmi = (heightNum*heightNum);
