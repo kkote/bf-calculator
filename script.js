@@ -130,26 +130,36 @@ window.onload = function(){
   var newEditRow  = newRow.insertCell(3);
   var newDeleteRow  = newRow.insertCell(4);
 
-  var dataDate = dateNum;
-  var dataWeight = weightNum;
-  var dataBf = bf;
-  // var dataBf = calculatedStats.toPrecision(3);
-
-
-
 // Append a text node to the cell
-  var newTextDate  = document.createTextNode(dataDate);
-  var newTextWeight  = document.createTextNode(dataWeight);
-  var newTextBf  = document.createTextNode(dataBf);
-  var newTextEdit  = document.createTextNode('edit');
-  var newTextDelete  = document.createTextNode('delete');
 
 
-  newDateRow.appendChild(newTextDate);
-  newWeightRow.appendChild(newTextWeight);
-  newBfRow.appendChild(newTextBf);
-  newEditRow.appendChild(newTextEdit);
-  newDeleteRow.appendChild(newTextDelete);
+  // var newTextEdit  = document.createTextNode('edit');
+
+  var newEditBtn = document.createElement("BUTTON");
+  newEditBtn.addEventListener("click", function() {
+  newEditBtn.innerHTML = "Edited";
+  });
+  var newEdit = document.createTextNode("Edit");
+  newEditBtn.appendChild(newEdit);
+  document.body.appendChild(newEditBtn);
+
+
+  var newDelBtn = document.createElement("BUTTON");
+  newDelBtn.addEventListener("click", function() {
+  newDelBtn.innerHTML = "Deleted";
+  });
+  var newDelete = document.createTextNode("Delete");
+  newDelBtn.appendChild(newDelete);
+  document.body.appendChild(newDelBtn);
+
+
+  newDateRow.appendChild(document.createTextNode(dateNum));
+  newWeightRow.appendChild(document.createTextNode(weightNum));
+  newBfRow.appendChild(document.createTextNode(bf));
+  newEditRow.appendChild(newEditBtn);
+  // newEditRow.appendChild(newEditBtn);
+  // newDeleteRow.appendChild(newTextDelete);
+  newDeleteRow.appendChild(newDelBtn);
 
 
 
