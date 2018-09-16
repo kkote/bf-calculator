@@ -99,14 +99,6 @@
                     </div>
 
                     <div class="form-row">
-                      <!-- <div class="col-md-6">
-                        <div class="form-label-group">
-                          <input type="number" id="heightInputId"
-                          name="heightInput" class="form-control"
-                           placeholder="Height 63" required="" value="63" >
-                           <label for="heightInputId">Height</label>
-                        </div>
-                      </div> -->
                       <div class="col-md-6">
                         <div class="form-label-group">
                           <input type="number" id="waistInputId"
@@ -188,6 +180,16 @@
                           </span>
                       </div>
 
+                      <div class="list-group-item">
+                        Lean Mass <span class="pull-right text-muted small" id="displayLeanMass"><em></em>
+                          </span>
+                      </div>
+
+                      <div class="list-group-item">
+                         Fat Mass <span class="pull-right text-muted small" id="displayFatMass"><em></em>
+                          </span>
+                      </div>
+
                   </div>
                   <!-- /.list-group -->
 
@@ -219,7 +221,8 @@
                 <i class="fas fa-table"></i> Timeline
                 <div class="pull-right">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-default btn-xs">Expand</button>
+                      <button type="button" class="btn btn-default btn-xs" id="newEditBtn">Edit</button>
+                      <button type="button" class="btn btn-default btn-xs" id="expandButton">Expand</button>
                     </div>
                 </div>
             </div>
@@ -236,7 +239,9 @@
                                         <th>Date</th>
                                         <th>Weight</th>
                                         <th>BF %</th>
-                                        <th>Edit</th>
+                                        <th>Neck</th>
+                                        <th>Waist</th>
+                                        <th>Hip</th>
                                         <th>Delete</th>
                                     </tr>
                                 </thead>
@@ -245,8 +250,10 @@
                                     <tr>
                                         <td>10/9/17</td>
                                         <td>120</td>
+                                        <td>12</td>
                                         <td>21.2</td>
-                                        <td><i class="far fa-edit"></i></td>
+                                        <td>27</td>
+                                        <td>36</td>
                                         <td><i class="far fa-trash-alt"></i></td>
 
                                     </tr>

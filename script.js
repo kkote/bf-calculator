@@ -6,7 +6,17 @@ window.onload = function(){
   var formId = document.getElementById("calcForm");
   // var obj = {};
 
-
+  newEditBtn.addEventListener("click", function() {
+    // var x = document.getElementById("tableId");
+    var x = document.getElementById("tableId");
+    if (x.contentEditable == "true") {
+        x.contentEditable = "false";
+        newEditBtn.innerHTML = "Edit";
+    } else {
+        x.contentEditable = "true";
+        newEditBtn.innerHTML = "Save";
+    }
+  });
 
   formId.onsubmit = function(){
 
@@ -117,6 +127,17 @@ window.onload = function(){
 
 
 
+  // var fatMassNum = (bf * weightNum);
+  // fatMassNum = parseInt(fatMassNum);
+  // var LeanMassNum = (weightNum - fatMassNum)
+  // document.getElementById("displayFatMass").innerHTML = fatMassNum;
+  // document.getElementById("displayLeanMass").inneHTML = LeanMassNum;
+
+
+  // document.getElementById("displayBmiRange").innerHTML = display;
+
+
+
 
   // add to table
   var tableRef = document.getElementById('tableId').getElementsByTagName('tbody')[0];
@@ -127,26 +148,19 @@ window.onload = function(){
   var newDateRow  = newRow.insertCell(0);
   var newWeightRow  = newRow.insertCell(1);
   var newBfRow  = newRow.insertCell(2);
-  var newEditRow  = newRow.insertCell(3);
-  var newDeleteRow  = newRow.insertCell(4);
+  var newNeckRow  = newRow.insertCell(3);
+  var newWaistRow  = newRow.insertCell(4);
+  var newHipsRow = newRow.insertCell(5);
+  var newDeleteRow  = newRow.insertCell(6);
 
 // Append a text node to the cell
 
 
-  // var newTextEdit  = document.createTextNode('edit');
-
-  var newEditBtn = document.createElement("BUTTON");
-  newEditBtn.addEventListener("click", function() {
-  newEditBtn.innerHTML = "Edited";
-  });
-  var newEdit = document.createTextNode("Edit");
-  newEditBtn.appendChild(newEdit);
-  document.body.appendChild(newEditBtn);
-
 
   var newDelBtn = document.createElement("BUTTON");
   newDelBtn.addEventListener("click", function() {
-  newDelBtn.innerHTML = "Deleted";
+  document.getElementById('tableId').deleteRow(this.parentNode.parentNode.rowIndex)
+
   });
   var newDelete = document.createTextNode("Delete");
   newDelBtn.appendChild(newDelete);
@@ -156,12 +170,11 @@ window.onload = function(){
   newDateRow.appendChild(document.createTextNode(dateNum));
   newWeightRow.appendChild(document.createTextNode(weightNum));
   newBfRow.appendChild(document.createTextNode(bf));
-  newEditRow.appendChild(newEditBtn);
-  // newEditRow.appendChild(newEditBtn);
-  // newDeleteRow.appendChild(newTextDelete);
+  newNeckRow.appendChild(document.createTextNode(neckNum));
+  newWaistRow.appendChild(document.createTextNode(waistNum));
+  newHipsRow.appendChild(document.createTextNode(hipNum));
+
   newDeleteRow.appendChild(newDelBtn);
-
-
 
 
 
