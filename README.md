@@ -15,6 +15,19 @@ On the side navigation bar you can sign in or look at you charts.
 This Calculator is for people who like to keep track of measurements, curious about stats, to losing weight, to gaining weight, and tracking progress.
 
 
+## Todo
+* m/f button required
+* floats used in inputs
+* clear BUTTON
+* align display output
+* navbar
+* mass function
+* add more stats - button
+* chart for table
+* TDEE function
+* macros/ calorie function
+* signin/ cache
+
 ## Getting Started
 
 To use clone or download and open in your text editor.
