@@ -16,15 +16,14 @@ This Calculator is for people who like to keep track of measurements, curious ab
 
 
 ## Todo
-* m/f button required
-* floats used in inputs
-* clear BUTTON
-* align display output
-* navbar
+
+
+* responsive
+
 * mass function
 * add more stats - button
 * chart for table
-* TDEE function
+
 * macros/ calorie function
 * signin/ cache
 

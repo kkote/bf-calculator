@@ -22,27 +22,30 @@ window.onload = function(){
 
 
     // retrieving input data after submit
-    var neckNum = document.getElementById("neckInputId").value;
-    var hipNum = document.getElementById("hipsInputId").value;
-    var waistNum = document.getElementById("waistInputId").value;
     var dateNum = document.getElementById("dateInputId").value;
-    var weightNum = document.getElementById("weightInputId").value;
-    var feetNum = document.getElementById("feetInputId").value;
-    var inchNum = document.getElementById("inchInputId").value;
+    var ageNum = document.getElementById("ageInputId").valueAsNumber;
+
+    var neckNum = document.getElementById("neckInputId").valueAsNumber;
+    var hipNum = document.getElementById("hipsInputId").valueAsNumber;
+    var waistNum = document.getElementById("waistInputId").valueAsNumber;
+
+    var weightNum = document.getElementById("weightInputId").valueAsNumber;
+    var feetNum = document.getElementById("feetInputId").valueAsNumber;
+    var inchNum = document.getElementById("inchInputId").valueAsNumber;
     var male = document.getElementById("maleId").value;
 
     var female = document.getElementById("femaleId").value;
     var genderId =document.querySelector('input[name="gender"]:checked').value;
     // console.log(genderId);
-
+    // console.log(typeof weightNum);
     // parsing values
-    var neckNum = parseInt(neckNum);
-    var hipNum = parseInt(hipNum);
-    var waistNum = parseInt(waistNum);
-    var weightNum = parseInt(weightNum);
-
-    var feetNum = parseInt(feetNum);
-    var inchNum = parseInt(inchNum);
+    // var neckNum = parseInt(neckNum);
+    // var hipNum = parseInt(hipNum);
+    // var waistNum = parseInt(waistNum);
+    // var weightNum = parseInt(weightNum);
+    // console.log(weightNum);
+    // var feetNum = parseInt(feetNum);
+    // var inchNum = parseInt(inchNum);
     var heightNum = ((feetNum * 12)+ inchNum);
 
 
@@ -58,7 +61,7 @@ window.onload = function(){
       }  else {
           var percentFat = (163.205 * Log10(((waistNum + hipNum) - neckNum)) - 97.684 * Log10(heightNum) - 78.387);
           var bf = percentFat.toPrecision(3);
-          console.log("female by is " + bf);
+          // console.log("female by is " + bf);
           return bf
         };
       };
@@ -71,7 +74,7 @@ window.onload = function(){
   var bmi = ((weightNum / (heightNum*heightNum)) * 703);
   var bmi = bmi.toPrecision(3);
   document.getElementById("displayBmi").innerHTML = bmi;
-  document.getElementById("displayInput").innerHTML = bf;
+  document.getElementById("displayInput").innerHTML = bf + "%";
 
   // putting stats in side panel
 
@@ -81,13 +84,84 @@ window.onload = function(){
     }  else if (bmi>=18.5 && bmi<=25){
         return "Normal"
     }  else if (bmi>=18.5 && bmi<=25){
-        return "Overwieght";
+        return "Overweight";
     }  else if (bmi>=18.5 && bmi<=25){
         return "Obese";
       };
     };
   var display = displayBmiRange(bmi);
   document.getElementById("displayBmiRange").innerHTML = display;
+
+
+
+function idealBfPercentage(age, bf){
+  if (genderId == "Male"){
+    if (age<25){
+        return 8.5;
+
+    }  else if (age>=25 && age<=30){
+      return 10.5;
+
+    }  else if (age>=30 && age<=35){
+      return 12.7;
+
+    }  else if (age>=35 && age<=40){
+      return 13.7;
+
+      }  else if (age>=40 && age<=45){
+        return 15.3;
+
+        }  else if (age>=45 && age<=50){
+          return 16.4;
+
+          }  else if (age>=50 && age<=55){
+            return 18.9;
+
+        }  else if (age>55){
+          return 10.5
+
+      };
+}  else {
+  if (age<25){
+    return 17.7;
+
+  }  else if (age>=25 && age<=30){
+    return 18.4;
+
+  }  else if (age>=30 && age<=35){
+    return 19.3;
+
+  }  else if (age>=35 && age<=40){
+    return 21.5;
+
+    }  else if (age>=40 && age<=45){
+      return 22.2;
+
+      }  else if (age>=45 && age<=50){
+        return 22.9;
+
+        }  else if (age>=50 && age<=55){
+          return 25.2;
+
+      }  else if (age>55){
+        return 26.3;
+
+    };
+  };
+};
+
+  var idealPercent = idealBfPercentage(ageNum, bf);
+  console.log(idealPercent);
+  var diffPercent = (bf - idealPercent);
+  console.log(diffPercent);
+  var toLose = (diffPercent / 100) * weightNum;
+  toLose = parseInt(toLose);
+  console.log(toLose);
+  document.getElementById("displayIdealPercent").innerHTML = idealPercent + "%";
+  document.getElementById("displayToLose").innerHTML = toLose +" lbs";
+
+
+
 
 
   // Bodyfat percentage ranges
@@ -122,16 +196,26 @@ window.onload = function(){
       };
   };
   };
+
+
   var bfRangeOutput = bfRanges(bf);
   document.getElementById("displayBfRange").innerText = bfRangeOutput;
 
 
+  var bfToPercent = (bf / 100);
+  // console.log(bfToPercent);
+  var fatMassNum = ( weightNum * bfToPercent);
+  // console.log(fatMassNum);
+  fatMassNum = parseInt(fatMassNum);
 
-  // var fatMassNum = (bf * weightNum);
-  // fatMassNum = parseInt(fatMassNum);
-  // var LeanMassNum = (weightNum - fatMassNum)
-  // document.getElementById("displayFatMass").innerHTML = fatMassNum;
-  // document.getElementById("displayLeanMass").inneHTML = LeanMassNum;
+  var LeanMassNum = (weightNum - fatMassNum);
+
+  LeanMassNum = parseInt(LeanMassNum);
+  // console.log(LeanMassNum);
+
+  document.getElementById("displayLeanMass").innerHTML = LeanMassNum + " lbs";
+  document.getElementById("displayFatMass").innerHTML = fatMassNum +" lbs";
+
 
 
   // document.getElementById("displayBmiRange").innerHTML = display;
