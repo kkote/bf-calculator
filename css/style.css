@@ -12,6 +12,37 @@
 /*---------------------------------
 	OVERRIDES
 -----------------------------------*/
+
+
+
+.chart .wrapper {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.chart h1 {
+  font-weight: 200;
+  font-size: 3em;
+  margin: 0 0 0.1em 0;
+}
+
+.chart h2 {
+  font-weight: 200;
+  font-size: 0.9em;
+  margin: 0 0 50px;
+  color: #999;
+}
+
+.chart a {
+  margin-top: 50px;
+  display: block;
+  color: #3e95cd;
+}
+
+
+
+
+
 h1,h2,h3,h4,h5,h6{
 font-family: "Arimo", arial, verdana, sans-serif;
 font-weight:normal;

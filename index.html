@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <link href="css/sb-admin-2.css" rel="stylesheet">
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
 
 </head>
 <body>
@@ -260,13 +263,11 @@
                           <!-- /.panel-body -->
                       </div>
                     </div>
-
-
-
+                    <!-- end row -->
                   </div>
-                  <!-- /.panel -->
 
-                  <!-- /.panel -->
+
+
               </div>
               <!-- /.col-lg-8 -->
               <div class="col-lg-4">
@@ -326,8 +327,8 @@
                 </div>
 
 
-                  <!-- /.panel -->
-                  <div class="panel panel-default">
+
+                  <!-- <div class="panel panel-default">
                       <div class="panel-heading">
                           <i class="fa fa-bar-chart-o fa-fw"></i> Donut Chart Example
                       </div>
@@ -335,14 +336,37 @@
                           <div id="morris-donut-chart"></div>
                           <a href="#" class="btn btn-default btn-block">View Details</a>
                       </div>
-                      <!-- /.panel-body -->
-                  </div>
+
+                  </div> -->
+
+
+
+
+
+
                   <!-- /.panel -->
 
                   <!-- /.panel .chat-panel -->
               </div>
               <!-- /.col-lg-4 -->
           </div>
+
+
+          <div class="col-xs-8 col-sm-8 col-md-8">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <i class="fa fa-bar-chart-o fa-fw"></i> Progress Chart
+              </div>
+              <div class="panel-body">
+                  <canvas id="myChart"></canvas>
+              </div>
+
+          </div>
+        </div>
+
+
+
+
           <!-- /.row -->
       </div>
       <!-- /#page-wrapper -->
