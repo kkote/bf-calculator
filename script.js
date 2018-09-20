@@ -11,12 +11,22 @@ window.onload = function(){
         data: {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [{
-                label: "My First dataset",
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45],
+                label: "Weight",
+                backgroundColor: 'black',
+                borderColor: 'black',
+                fill: false,
+                data: [150, 146, 144, 147, 144, 143, 147],
             }]
         },
+        // {
+        //     labels: ["January", "February", "March", "April", "May", "June", "July"],
+        //     datasets: [{
+        //         label: "My First dataset",
+        //         backgroundColor: 'rgb(255, 99, 132)',
+        //         borderColor: 'rgb(255, 99, 132)',
+        //         data: [0, 10, 5, 2, 20, 30, 45],
+        //     }]
+        // },
 
         // Configuration options go here
         options: {}
