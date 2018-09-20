@@ -17,14 +17,10 @@ This Calculator is for people who like to keep track of measurements, curious ab
 
 ## Todo
 
-
 * responsive
-
-* mass function
+* move delete button to header
 * add more stats - button
 * chart for table
-
-* macros/ calorie function
 * signin/ cache
 
 ## Getting Started

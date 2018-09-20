@@ -1,13 +1,11 @@
 
-
 window.onload = function(){
                // Just Make sure to return false so that your request will not go the server script
 
   var formId = document.getElementById("calcForm");
-  // var obj = {};
 
+// edit button for table
   newEditBtn.addEventListener("click", function() {
-    // var x = document.getElementById("tableId");
     var x = document.getElementById("tableId");
     if (x.contentEditable == "true") {
         x.contentEditable = "false";
@@ -20,15 +18,12 @@ window.onload = function(){
 
   formId.onsubmit = function(){
 
-
     // retrieving input data after submit
     var dateNum = document.getElementById("dateInputId").value;
     var ageNum = document.getElementById("ageInputId").valueAsNumber;
-
     var neckNum = document.getElementById("neckInputId").valueAsNumber;
     var hipNum = document.getElementById("hipsInputId").valueAsNumber;
     var waistNum = document.getElementById("waistInputId").valueAsNumber;
-
     var weightNum = document.getElementById("weightInputId").valueAsNumber;
     var feetNum = document.getElementById("feetInputId").valueAsNumber;
     var inchNum = document.getElementById("inchInputId").valueAsNumber;
@@ -36,19 +31,10 @@ window.onload = function(){
 
     var female = document.getElementById("femaleId").value;
     var genderId =document.querySelector('input[name="gender"]:checked').value;
-    // console.log(genderId);
-    // console.log(typeof weightNum);
-    // parsing values
-    // var neckNum = parseInt(neckNum);
-    // var hipNum = parseInt(hipNum);
-    // var waistNum = parseInt(waistNum);
-    // var weightNum = parseInt(weightNum);
-    // console.log(weightNum);
-    // var feetNum = parseInt(feetNum);
-    // var inchNum = parseInt(inchNum);
+
     var heightNum = ((feetNum * 12)+ inchNum);
 
-
+    //find body fat percentage by gender
     function findBf(genderId){
       function Log10(X){
          return( Math.log(X) / Math.log(10) );
@@ -67,17 +53,13 @@ window.onload = function(){
       };
     var bf = findBf(genderId);
     console.log(bf);
-
-    // var bf = findBmi(genderId);
-    // console.log(bf);
-
+//calculate bmi
   var bmi = ((weightNum / (heightNum*heightNum)) * 703);
   var bmi = bmi.toPrecision(3);
   document.getElementById("displayBmi").innerHTML = bmi;
   document.getElementById("displayInput").innerHTML = bf + "%";
 
-  // putting stats in side panel
-
+  // putting bmi stats in side panel
   function displayBmiRange(bmi){
     if (bmi<18.5){
         return "Underweight";
@@ -92,64 +74,48 @@ window.onload = function(){
   var display = displayBmiRange(bmi);
   document.getElementById("displayBmiRange").innerHTML = display;
 
-
-
+// find ideal percentage by gender and age
 function idealBfPercentage(age, bf){
   if (genderId == "Male"){
     if (age<25){
         return 8.5;
-
     }  else if (age>=25 && age<=30){
       return 10.5;
-
     }  else if (age>=30 && age<=35){
       return 12.7;
-
     }  else if (age>=35 && age<=40){
       return 13.7;
-
       }  else if (age>=40 && age<=45){
         return 15.3;
-
         }  else if (age>=45 && age<=50){
           return 16.4;
-
           }  else if (age>=50 && age<=55){
             return 18.9;
-
         }  else if (age>55){
           return 10.5
-
       };
 }  else {
   if (age<25){
     return 17.7;
-
   }  else if (age>=25 && age<=30){
     return 18.4;
-
   }  else if (age>=30 && age<=35){
     return 19.3;
-
   }  else if (age>=35 && age<=40){
     return 21.5;
-
     }  else if (age>=40 && age<=45){
       return 22.2;
-
       }  else if (age>=45 && age<=50){
         return 22.9;
-
         }  else if (age>=50 && age<=55){
           return 25.2;
-
       }  else if (age>55){
         return 26.3;
-
     };
   };
 };
 
+  //calculate lbs to lose
   var idealPercent = idealBfPercentage(ageNum, bf);
   console.log(idealPercent);
   var diffPercent = (bf - idealPercent);
@@ -162,12 +128,10 @@ function idealBfPercentage(age, bf){
 
 
 
-
-
   // Bodyfat percentage ranges
   function bfRanges(bf){
     if (genderId == "Male"){
-      if (bf<18.5){
+      if (bf<3){
           return "Underfat";
       }  else if (bf>=3 && bf<=5){
           return "Essential Fat"
@@ -197,29 +161,17 @@ function idealBfPercentage(age, bf){
   };
   };
 
-
+  //display bf range
   var bfRangeOutput = bfRanges(bf);
   document.getElementById("displayBfRange").innerText = bfRangeOutput;
-
-
   var bfToPercent = (bf / 100);
-  // console.log(bfToPercent);
+  // calculate lean mass and fat mass
   var fatMassNum = ( weightNum * bfToPercent);
-  // console.log(fatMassNum);
   fatMassNum = parseInt(fatMassNum);
-
   var LeanMassNum = (weightNum - fatMassNum);
-
   LeanMassNum = parseInt(LeanMassNum);
-  // console.log(LeanMassNum);
-
   document.getElementById("displayLeanMass").innerHTML = LeanMassNum + " lbs";
   document.getElementById("displayFatMass").innerHTML = fatMassNum +" lbs";
-
-
-
-  // document.getElementById("displayBmiRange").innerHTML = display;
-
 
 
 
@@ -227,7 +179,6 @@ function idealBfPercentage(age, bf){
   var tableRef = document.getElementById('tableId').getElementsByTagName('tbody')[0];
   // Insert a row in the table at the last row
   var newRow   = tableRef.insertRow(tableRef.rows.length);
-
   // Insert a cell in the row at index 0
   var newDateRow  = newRow.insertCell(0);
   var newWeightRow  = newRow.insertCell(1);
@@ -237,27 +188,23 @@ function idealBfPercentage(age, bf){
   var newHipsRow = newRow.insertCell(5);
   var newDeleteRow  = newRow.insertCell(6);
 
-// Append a text node to the cell
-
-
-
+  //delete button
   var newDelBtn = document.createElement("BUTTON");
   newDelBtn.addEventListener("click", function() {
   document.getElementById('tableId').deleteRow(this.parentNode.parentNode.rowIndex)
-
   });
   var newDelete = document.createTextNode("Delete");
   newDelBtn.appendChild(newDelete);
   document.body.appendChild(newDelBtn);
 
 
+// Append a text node to the cell
   newDateRow.appendChild(document.createTextNode(dateNum));
   newWeightRow.appendChild(document.createTextNode(weightNum));
   newBfRow.appendChild(document.createTextNode(bf));
   newNeckRow.appendChild(document.createTextNode(neckNum));
   newWaistRow.appendChild(document.createTextNode(waistNum));
   newHipsRow.appendChild(document.createTextNode(hipNum));
-
   newDeleteRow.appendChild(newDelBtn);
 
 

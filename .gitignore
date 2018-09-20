@@ -3,7 +3,7 @@ bower_components
 
 
 /bf-admin temp
-
+/temp
 /data
 
 
@@ -25,7 +25,7 @@ logs
 *.logs
 
 
-/pages
+
 /dist
 /less
 /vendor
