@@ -27,7 +27,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+              <a class="navbar-brand" href="index.html">Body Stats Calculator</a>
           </div>
 
 
@@ -69,21 +69,28 @@
       </nav>
 
       <div id="page-wrapper">
-          <div class="row">
-              <div class="col-lg-12">
-                  <h1 class="page-header">Body Stat Calculator</h1>
-              </div>
-              <!-- /.col-lg-12 -->
-          </div>
+        <ol id="breadcrumb" class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+        <li class="breadcrumb-item active">Dashboard</li>
+        <!-- Breadcrumb Menu-->
+        <li class="breadcrumb-menu d-md-down-none">
+          <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <a class="btn" href="#"><i class="icon-speech"></i></a>
 
-          <!-- /.row -->
+          </div>
+        </li>
+      </ol>
+
+
+
           <div class="row">
-            <div class="col-lg-8">
+            <div class="col-md-8">
               <div class="panel panel-default">
 
-                <div class="panel-heading">
-                  <i class="fas fa-dumbbell"></i>  Your Measurements
+                <div id="panel1" class=" panel-heading"> <h4>Your Measurements</h4>
                 </div>
+                <hr class="mb-4">
                 <div class="panel-body">
 
 
@@ -185,7 +192,7 @@
 
                         </div>
                     <!-- end from group -->
-                        <div class="form-row">
+                        <div class="btn-row form-row">
                           <button class="btn btn-primary btn-block" type="submit">Submit</button >
                             <button class="btn btn-warning btn-block" type="reset" value="Reset">Reset</button >
                         </div>
@@ -199,52 +206,56 @@
               </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-md-4">
               <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <i class="fas fa-percent"></i>  Your Stats
+                  <div id="panel2" class="panel-heading">
+                        <h4 class="card-title mb-0">Your Stats</h4>
                   </div>
+                  <hr class="mb-4">
                   <!-- /.panel-heading -->
                   <div class="panel-body">
                       <div class="list-group">
                         <!-- bf percentage output -->
+
+
+
                         <div class="list-group-item">
-                          BF percentage <span class="pull-right text-muted small" id="displayInput"><em></em>
+                          BF percentage <span class="pull-right font-weight-bold" id="displayInput"><em></em>
                             </span>
                         </div>
 
                           <div class="list-group-item">
-                            Bf Range <span class="pull-right text-muted small" id="displayBfRange"><em></em>
+                            Bf Range <span class="pull-right font-weight-bold" id="displayBfRange"><em></em>
                               </span>
                           </div>
 
                           <div class="list-group-item">
-                            BMI  <span class="pull-right text-muted small" id="displayBmi"><em></em>
+                            BMI  <span class="pull-right font-weight-bold" id="displayBmi"><em></em>
                               </span>
                           </div>
 
                           <div class="list-group-item">
-                             BMI Range <span class="pull-right text-muted small" id="displayBmiRange"><em></em>
+                             BMI Range <span class="pull-right font-weight-bold" id="displayBmiRange"><em></em>
                               </span>
                           </div>
 
                           <div class="list-group-item">
-                            Lean Mass <span class="pull-right text-muted small" id="displayLeanMass"><em></em>
+                            Lean Mass <span class="pull-right font-weight-bold" id="displayLeanMass"><em></em>
                               </span>
                           </div>
 
                           <div class="list-group-item">
-                             Fat Mass <span class="pull-right text-muted small" id="displayFatMass"><em></em>
+                             Fat Mass <span class="pull-right font-weight-bold" id="displayFatMass"><em></em>
                               </span>
                           </div>
 
                           <div class="list-group-item">
-                            Ideal Percentage <span class="pull-right text-muted small" id="displayIdealPercent"><em></em>
+                            Ideal Percentage <span class="pull-right font-weight-bold" id="displayIdealPercent"><em></em>
                               </span>
                           </div>
 
                           <div class="list-group-item">
-                             Lbs To Lose  <span class="pull-right text-muted small" id="displayToLose"><em></em>
+                             Lbs To Lose  <span class="pull-right font-weight-bold" id="displayToLose"><em></em>
                               </span>
                           </div>
 
@@ -265,9 +276,10 @@
                   <div class="row">
 
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                      <div class="panel panel-default">
-                          <div class="panel-heading">
-                              <i class="fas fa-table"></i> Timeline
+                      <div  class="panel panel-default">
+                          <div  class="panel-heading">
+
+                              <h4 class="card-title mb-0">Timeline</h4>
                               <div class="pull-right">
                                   <div class="btn-group">
                                     <button type="button" class="btn btn-default btn-xs" id="newEditBtn">Edit</button>
@@ -275,6 +287,7 @@
                                   </div>
                               </div>
                           </div>
+                          <hr class="mb-4">
 
                           <!-- Use as chart for database results -->
                           <!-- /.panel-heading -->
@@ -282,7 +295,7 @@
                               <div class="row">
                                   <div class="">
                                       <div class="table-responsive">
-                                          <table class="table table-bordered table-hover table-striped" id="tableId">
+                                          <table class="table  table-hover table-striped" id="tableId">
                                               <thead>
                                                   <tr>
                                                       <th>Date</th>
@@ -321,11 +334,15 @@
                     </div>
                     <!-- end row -->
 
+
+
                     <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Progress Chart
+                          <h4 class="card-title mb-0">Progress Chart</h4>
                         </div>
+
+                        <hr class="mb-4">
                         <div class="panel-body">
                             <canvas id="myChart"></canvas>
                         </div>
@@ -334,7 +351,7 @@
                   </div>
 
 
-                  </div>
+            </div>
 
 
 
