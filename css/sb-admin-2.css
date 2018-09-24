@@ -184,8 +184,8 @@ border-top: 1px solid #bcc5d0 !important;
 }
 .sidebar .sidebar-nav.navbar-collapse {
   background: #19252be6;
-
-height: -webkit-fill-available;
+    min-height: 90rem;
+/* height: -webkit-fill-available; */
   padding-left: 0;
   padding-right: 0;
 }

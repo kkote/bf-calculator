@@ -17,7 +17,6 @@ This Calculator is for people who like to keep track of measurements, curious ab
 
 ## Todo
 
-* responsive
 * move delete button to header
 * add more stats - button
 * chart for table
@@ -31,6 +30,10 @@ To use clone or download and open in your text editor.
 ## Built With
 
 * [Startbootstrap](https://startbootstrap.com/template-overviews/sb-admin-2/) - Template
+* [CoreUI](https://coreui.io/) - Layout
+* [Chart.js](http://www.chartjs.org/) - Chart
+
+
 
 
 ## Author
@@ -45,5 +48,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Inspiration [Calculator.com] - Bodyfat Calculator
-
-* Hat tip to anyone whose code was used
