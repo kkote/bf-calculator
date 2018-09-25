@@ -82,7 +82,13 @@ text-shadow: 0 0 1px transparent; /* google font pixelation fix */
 }
 
 
+/* body {
+  font-size: 18px !important;
+} */
 
+#calcForm {
+  font-size: 18px !important;
+}
 
 
 

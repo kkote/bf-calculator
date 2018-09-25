@@ -29,7 +29,7 @@ To use clone or download and open in your text editor.
 
 ## Built With
 
-* [Startbootstrap](https://startbootstrap.com/template-overviews/sb-admin-2/) - Template
+* [Startbootstrap](https://startbootstrap.com/template-overviews/sb-admin-2/) - Layout
 * [CoreUI](https://coreui.io/) - Layout
 * [Chart.js](http://www.chartjs.org/) - Chart
 
