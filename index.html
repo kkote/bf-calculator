@@ -5,6 +5,8 @@
 <title>Bf Calculator</title>
 
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/> -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <link href="css/sb-admin-2.css" rel="stylesheet">
@@ -31,7 +33,7 @@
           </div>
 
 
-          <div class="navbar-default sidebar" role="navigation">
+           <div class="navbar-default sidebar" role="navigation">
               <div class="sidebar-nav navbar-collapse">
                   <ul class="nav" id="side-menu">
                       <li class="sidebar-search">
@@ -43,7 +45,7 @@
                               </button>
                           </span>
                           </div>
-                          <!-- /input-group -->
+
                       </li>
                       <li>
                           <a href="pages/index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
@@ -65,7 +67,7 @@
               </div>
               <!-- /.sidebar-collapse -->
           </div>
-          <!-- /.navbar-static-side -->
+
       </nav>
 
       <div id="page-wrapper">
@@ -110,10 +112,10 @@
 
 
                           <div class="form-row">
-                            <div class="col-md-6">
+                            <div class=" col-md-6">
                               <div class="form-label-group">
                                 <input type="date" id="dateInputId"
-                                name="dateInput" class="form-control"
+                                name="dateInput" class="form-control-x"
                                   required="" value="2018-08-06" >
                                  <label for="dateInputId">Date</label>
                               </div>
@@ -121,27 +123,28 @@
                             <div class="col-md-6">
                               <div class="form-label-group">
                                 <input type="number" id="ageInputId"
-                                name="AgeInput" class="form-control"
+                                name="AgeInput" class="form-control-x"
                                   required=""
                                   step="" value="26"><label for="ageInputId">Age</label>
                               </div>
                             </div>
-                            <div class="col-md-6">
-                              <div class="form-label-group">
-                                <input type="number" id="weightInputId"
-                                name="weightInput" class="form-control"
-                                  required=""
-                                  step="any" value="133"><label for="weightInputId">Weight</label>
-                              </div>
-                            </div>
+
                           </div>
 
 
                           <div class="form-row">
                             <div class="col-md-6">
+                              <div class="form-label-group">
+                                <input type="number" id="weightInputId"
+                                name="weightInput" class="form-control-x"
+                                  required=""
+                                  step="any" value="133"><label for="weightInputId">Weight</label>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
                               <div class="form-label-group ">
                                 <input  type="number" id="neckInputId"
-                                name="necksInput" class="form-control"
+                                name="necksInput" class="form-control-x"
                                  placeholder="Neck" required=""
                                 onsubmit="myScript" value="13" step="any">
                                 <label for="neckInputId">Neck</label>
@@ -153,19 +156,16 @@
                             <div class="col-md-6">
                               <div class="form-label-group">
                                 <input type="number" id="hipsInputId"
-                                name="hipsInput" class="form-control"
+                                name="hipsInput" class="form-control-x"
                                  placeholder="Hips" required=""
                                  value="36" step="any"><label for="hipsInputId">Hips</label>
-
                               </div>
                             </div>
-                          </div>
 
-                          <div class="form-row">
                             <div class="col-md-6">
                               <div class="form-label-group">
                                 <input type="number" id="waistInputId"
-                                name="waistInput" class="form-control"
+                                name="waistInput" class="form-control-x"
                                  placeholder="Waist" required="" value="33" step="any"><label for="waistInputId">Waist</label>
                               </div>
                             </div>
@@ -175,7 +175,7 @@
                             <div class="col-md-6">
                               <div class="form-label-group">
                                 <input type="number" id="feetInputId"
-                                name="feetInput" class="form-control"
+                                name="feetInput" class="form-control-x"
                                  placeholder="5" required="" value="5" step="any" >
                                  <label for="feetInputId">Feet</label>
                               </div>
@@ -183,7 +183,7 @@
                             <div class="col-md-6">
                               <div class="form-label-group">
                                 <input type="number" id="inchInputId"
-                                name="inchInput" class="form-control"
+                                name="inchInput" class="form-control-x"
                                  placeholder="3" required="" value="4" step="any"><label for="inchInputId">Inch</label>
                               </div>
                             </div>
@@ -248,16 +248,12 @@
                              Fat Mass <span class="pull-right font-weight-bold" id="displayFatMass"><em></em>
                               </span>
                           </div>
-
                           <div class="list-group-item">
-                            Ideal Percentage <span class="pull-right font-weight-bold" id="displayIdealPercent"><em></em>
+                             TDEE <span class="pull-right font-weight-bold" id="displayTdee"><em></em>
                               </span>
                           </div>
 
-                          <div class="list-group-item">
-                             Lbs To Lose  <span class="pull-right font-weight-bold" id="displayToLose"><em></em>
-                              </span>
-                          </div>
+
 
                       </div>
                       <!-- /.list-group -->

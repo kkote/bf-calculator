@@ -108,58 +108,6 @@ window.onload = function(){
   var display = displayBmiRange(bmi);
   document.getElementById("displayBmiRange").innerHTML = display;
 
-// find ideal percentage by gender and age
-function idealBfPercentage(age, bf){
-  if (genderId == "Male"){
-    if (age<25){
-        return 8.5;
-    }  else if (age>=25 && age<=30){
-      return 10.5;
-    }  else if (age>=30 && age<=35){
-      return 12.7;
-    }  else if (age>=35 && age<=40){
-      return 13.7;
-      }  else if (age>=40 && age<=45){
-        return 15.3;
-        }  else if (age>=45 && age<=50){
-          return 16.4;
-          }  else if (age>=50 && age<=55){
-            return 18.9;
-        }  else if (age>55){
-          return 10.5
-      };
-}  else {
-  if (age<25){
-    return 17.7;
-  }  else if (age>=25 && age<=30){
-    return 18.4;
-  }  else if (age>=30 && age<=35){
-    return 19.3;
-  }  else if (age>=35 && age<=40){
-    return 21.5;
-    }  else if (age>=40 && age<=45){
-      return 22.2;
-      }  else if (age>=45 && age<=50){
-        return 22.9;
-        }  else if (age>=50 && age<=55){
-          return 25.2;
-      }  else if (age>55){
-        return 26.3;
-    };
-  };
-};
-
-  //calculate lbs to lose
-  var idealPercent = idealBfPercentage(ageNum, bf);
-  console.log(idealPercent);
-  var diffPercent = (bf - idealPercent);
-  console.log(diffPercent);
-  var toLose = (diffPercent / 100) * weightNum;
-  toLose = parseInt(toLose);
-  console.log(toLose);
-  document.getElementById("displayIdealPercent").innerHTML = idealPercent + "%";
-  document.getElementById("displayToLose").innerHTML = toLose +" lbs";
-
 
 
   // Bodyfat percentage ranges
