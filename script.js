@@ -2,38 +2,106 @@
 window.onload = function(){
                // Just Make sure to return false so that your request will not go the server script
 
-     var ctx = document.getElementById('myChart').getContext('2d');
-    var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'line',
+               var canvas = document.getElementById("myChart");
+               var ctx = canvas.getContext('2d');
+               var chartType = 'line';
+               var myChart;
 
-        // The data for our dataset
-        data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [{
-                label: "Weight",
-                backgroundColor: 'black',
-                borderColor: 'black',
-                fill: false,
-                data: [150, 146, 144, 147, 144, 143, 147],
-            }]
-        },
-        // {
-        //     labels: ["January", "February", "March", "April", "May", "June", "July"],
-        //     datasets: [{
-        //         label: "My First dataset",
-        //         backgroundColor: 'rgb(255, 99, 132)',
-        //         borderColor: 'rgb(255, 99, 132)',
-        //         data: [0, 10, 5, 2, 20, 30, 45],
-        //     }]
-        // },
+               // Global Options:
+               Chart.defaults.global.defaultFontColor = 'grey';
+               Chart.defaults.global.defaultFontSize = 16;
 
-        // Configuration options go here
-        options: {}
-    });
+               var data = {
+                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+                 datasets: [{
+                   label: "Weight",
+                   fill: false,
+                   lineTension: 0.1,
+                   backgroundColor: "rgba(0,255,0,0.4)",
+                   borderColor: "green", // The main line color
+                   pointBackgroundColor: "green",
+                   pointHitRadius: 10,
+                   data: [120, 130, 140, 135, 145, 135, 140],
+                   spanGaps: true,
+                 }]
+               };
+
+               var options = {
+                 scales: {
+                   yAxes: [{
+                     ticks: {
+                       beginAtZero: false
+                     }
+                   }]
+                 }
+               };
 
 
+               // var options = {
+               //   scales: {
+               //     yAxes: [{
+               //       ticks: {
+               //         beginAtZero: false
+               //       }
+               //     }]
+               //
+               //   },
+               //   scales: xAxes: [{
+               //       type: 'time',
+               //       distribution: 'linear',
+               //       time: {
+               //           displayFormats: {
+               //               quarter: 'MMM YYYY' sep 2015
+               //               quarter: 'MMM D' sep 4
+               //           }
+               //       }
+               //   }]
+               //
+               // };
 
+
+               init();
+
+               function init() {
+                 // Chart declaration:
+                 myChart = new Chart(ctx, {
+                   type: chartType,
+                   data: data,
+                   options: options
+                 });
+               }
+
+               // addData();
+               // // adjustNov();
+
+               newChartBtn.addEventListener("click", function() {
+                 var getTable =
+                 (document.getElementById("tableId"));
+
+                 var tableRow = 1;
+                 var monthCell = 0;
+                 var weightCell = 1;
+
+                 var tableWeight = (getTable.rows[tableRow].cells[weightCell].innerHTML);
+                 var tableDate = (getTable.rows[tableRow].cells[monthCell].innerHTML);
+                 console.log(tableDate);
+                 console.log(tableWeight);
+                 // var monthDayFormat = moment(tableDate).format("MMM D");
+                 var monthFormat = moment(tableDate).format("MM");
+                 // var weightForChartData = 180;
+                 var monthsNumberForChart = (monthFormat - 1 );
+                 var weightForChartData = tableWeight;
+
+                addDataTable(monthsNumberForChart, weightForChartData);
+
+               });
+
+       //TODO most recent table entry, then graph whole table(update)
+
+       function addDataTable(monthsLabel, numberData) {
+         myChart.data.datasets[0].data[monthsLabel] = numberData;
+         myChart.update();
+       };
 
 
   var formId = document.getElementById("calcForm");
@@ -187,7 +255,8 @@ window.onload = function(){
   // add to table
   var tableRef = document.getElementById('tableId').getElementsByTagName('tbody')[0];
   // Insert a row in the table at the last row
-  var newRow   = tableRef.insertRow(tableRef.rows.length);
+  // var newRow   = tableRef.insertRow(tableRef.rows.length);
+  var newRow   = tableRef.insertRow(0);
   // Insert a cell in the row at index 0
   var newDateRow  = newRow.insertCell(0);
   var newWeightRow  = newRow.insertCell(1);
@@ -208,15 +277,13 @@ window.onload = function(){
 
 
 // Append a text node to the cell
-  newDateRow.appendChild(document.createTextNode(dateNum));
-  newWeightRow.appendChild(document.createTextNode(weightNum));
+  newDateRow.append(document.createTextNode(dateNum));
+  newWeightRow.append(document.createTextNode(weightNum));
   newBfRow.appendChild(document.createTextNode(bf));
   newNeckRow.appendChild(document.createTextNode(neckNum));
   newWaistRow.appendChild(document.createTextNode(waistNum));
   newHipsRow.appendChild(document.createTextNode(hipNum));
   newDeleteRow.appendChild(newDelBtn);
-
-
 
 
     return false

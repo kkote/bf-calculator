@@ -32,3 +32,5 @@ logs
 /vendor
 test.html
 .env.sample
+
+graph.js

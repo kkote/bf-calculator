@@ -105,6 +105,7 @@ padding: 4px 10px;
   /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); */
   /* border: groove .5px; */
   display: inline-flex;
+  margin-left: 2rem;
 }
 
 #maleOrFemale label {
@@ -118,7 +119,7 @@ padding: 4px 10px;
       /* border: groove .5px; */
 
       padding: 4px;
-      margin-left: 3px;
+      /* margin-left: 3px; */
 
 
 }
@@ -134,22 +135,27 @@ padding: 4px 10px;
   /* border-radius: 4px; */
   /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); */
   /* border: groove .5px; */
-  margin-left: 3rem;
+  /* margin-left: 3rem; */
   display: inline-flex;
 }
 
-#activityLevel label {
+#activityLabel{
+  font-weight: bold;
+}
+
+#activityLevel .form-label-group label {
   font-weight: normal;
   margin: 2px;
 }
+
 
 #activityLevel .form-label-group {
   border-radius: 4px;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
       /* border: groove .5px; */
 
-      padding: 1px;
-      margin: 1px;
+      /* padding: 1px;
+      margin: 1px; */
 
 
 }
