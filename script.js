@@ -61,10 +61,13 @@ window.onload = function(){
     var weightNum = document.getElementById("weightInputId").valueAsNumber;
     var feetNum = document.getElementById("feetInputId").valueAsNumber;
     var inchNum = document.getElementById("inchInputId").valueAsNumber;
-    var male = document.getElementById("maleId").value;
-
-    var female = document.getElementById("femaleId").value;
     var genderId =document.querySelector('input[name="gender"]:checked').value;
+
+    var activityNum =document.querySelector('input[name="activity"]:checked').value;
+    console.log(activityNum);
+    var activityNumber = parseFloat(activityNum);
+
+
 
     var heightNum = ((feetNum * 12)+ inchNum);
 
@@ -76,7 +79,7 @@ window.onload = function(){
       if (genderId == "Male"){
           var percentFat = ((86.010 * (Log10(waistNum - neckNum))) - (70.041 * (Log10(heightNum))) + 36.76);
           var bf = percentFat.toPrecision(3);
-          console.log("male by is " + bf);
+          // console.log("male by is " + bf);
           return bf
       }  else {
           var percentFat = (163.205 * Log10(((waistNum + hipNum) - neckNum)) - 97.684 * Log10(heightNum) - 78.387);
@@ -86,7 +89,7 @@ window.onload = function(){
         };
       };
     var bf = findBf(genderId);
-    console.log(bf);
+    // console.log(bf);
 //calculate bmi
   var bmi = ((weightNum / (heightNum*heightNum)) * 703);
   var bmi = bmi.toPrecision(3);
@@ -107,7 +110,6 @@ window.onload = function(){
     };
   var display = displayBmiRange(bmi);
   document.getElementById("displayBmiRange").innerHTML = display;
-
 
 
   // Bodyfat percentage ranges
@@ -154,6 +156,31 @@ window.onload = function(){
   LeanMassNum = parseInt(LeanMassNum);
   document.getElementById("displayLeanMass").innerHTML = LeanMassNum + " lbs";
   document.getElementById("displayFatMass").innerHTML = fatMassNum +" lbs";
+
+
+  //find tdee from gender and activity level
+    function findTdee(genderId, activityNumber){
+      if (genderId == "Male"){
+        var bmr = 66 + (6.23 * weightNum) + (12.7 * heightNum) - (6.8 * ageNum);
+        var bmrNum = bmr.toPrecision(4);
+          console.log("bmr by is " + bmrNum);
+          console.log("acitity in function " + activityNumber)
+          var tdee = (bmrNum * activityNumber);
+          console.log("tdee is " + tdee);
+          return tdee
+      }  else {
+          var bmr = 655 + (4.35 * weightNum) + (4.7 * heightNum) - (4.7 * ageNum);
+          var bmrNum = bmr.toPrecision(4);
+          var tdee = (bmrNum * activityNumber);
+            console.log("female by is " + bmrNum);
+            return tdee
+        };
+      };
+
+    var tdee = findTdee(genderId, activityNumber);
+    var tdee = tdee.toPrecision(4);
+    console.log("tdee from function " + tdee);
+    document.getElementById("displayTdee").innerHTML = tdee + " calories";
 
 
 

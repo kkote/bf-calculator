@@ -33,7 +33,7 @@
           </div>
 
 
-           <div class="navbar-default sidebar" role="navigation">
+          <!-- <div class="navbar-default sidebar" role="navigation">
               <div class="sidebar-nav navbar-collapse">
                   <ul class="nav" id="side-menu">
                       <li class="sidebar-search">
@@ -65,8 +65,8 @@
 
                   </ul>
               </div>
-              <!-- /.sidebar-collapse -->
-          </div>
+
+          </div> -->
 
       </nav>
 
@@ -97,29 +97,52 @@
 
 
                   <div class="card card-register mx-auto mt-5">
-                    <div class="card-header">Enter in Inches</div>
+                    <!-- <div class="card-header">Enter in Inches</div> -->
                     <div class="card-body">
 
                       <form id="calcForm" class="vertical">
+
+
+                  <div class="form-label-group " id="maleOrFemale">
+
+                      <div class="form-label-group" >
+                        <input name = "gender" type = "radio" class="" value = "Male" id="maleId" checked>
+                        <label for="maleOrFemale">Male</label>
+                      </div>
+
+                      <div class="form-label-group">
+                          <input name = "gender" class="" type = "radio" value = "Female" id="femaleId" > <label for="maleOrFemale">Female</label>
+                      </div>
+                  </div>
+
+
                         <div class="form-group">
 
-                          <div class="form-row">
-                            <div class="form-label-group " id="maleOrFemale">
-                              <input name = "gender" type = "radio" value = "Male" id="maleId" checked> Male
-                              <input name = "gender" type = "radio" value = "Female" id="femaleId" > Female
-                            </div>
-                          </div>
 
 
-                          <div class="form-row">
+
+
+                          <!-- <div class="form-row">
+
                             <div class=" col-md-6">
-                              <div class="form-label-group">
-                                <input type="date" id="dateInputId"
-                                name="dateInput" class="form-control-x"
-                                  required="" value="2018-08-06" >
-                                 <label for="dateInputId">Date</label>
-                              </div>
+
+                                <div class="form-label-group " id="maleOrFemale">
+
+                                    <div class="form-label-group" >
+                                      <input name = "gender" type = "radio" class="" value = "Male" id="maleId" checked>
+                                      <label for="maleOrFemale">Male</label>
+                                    </div>
+
+                                    <div class="form-label-group">
+                                        <input name = "gender" class="" type = "radio" value = "Female" id="femaleId" > <label for="maleOrFemale">Female</label>
+                                    </div>
+                                </div>
+
                             </div>
+                          </div> -->
+
+                          <div class="form-row">
+
                             <div class="col-md-6">
                               <div class="form-label-group">
                                 <input type="number" id="ageInputId"
@@ -128,11 +151,6 @@
                                   step="" value="26"><label for="ageInputId">Age</label>
                               </div>
                             </div>
-
-                          </div>
-
-
-                          <div class="form-row">
                             <div class="col-md-6">
                               <div class="form-label-group">
                                 <input type="number" id="weightInputId"
@@ -141,35 +159,10 @@
                                   step="any" value="133"><label for="weightInputId">Weight</label>
                               </div>
                             </div>
-                            <div class="col-md-6">
-                              <div class="form-label-group ">
-                                <input  type="number" id="neckInputId"
-                                name="necksInput" class="form-control-x"
-                                 placeholder="Neck" required=""
-                                onsubmit="myScript" value="13" step="any">
-                                <label for="neckInputId">Neck</label>
-                              </div>
-                            </div>
+
                           </div>
 
-                          <div class="form-row">
-                            <div class="col-md-6">
-                              <div class="form-label-group">
-                                <input type="number" id="hipsInputId"
-                                name="hipsInput" class="form-control-x"
-                                 placeholder="Hips" required=""
-                                 value="36" step="any"><label for="hipsInputId">Hips</label>
-                              </div>
-                            </div>
 
-                            <div class="col-md-6">
-                              <div class="form-label-group">
-                                <input type="number" id="waistInputId"
-                                name="waistInput" class="form-control-x"
-                                 placeholder="Waist" required="" value="33" step="any"><label for="waistInputId">Waist</label>
-                              </div>
-                            </div>
-                          </div>
 
                           <div class="form-row">
                             <div class="col-md-6">
@@ -190,7 +183,121 @@
                           </div>
 
 
+                          <div class="form-row">
+                            <div class="col-md-6">
+                              <div class="form-label-group">
+                                <input type="number" id="hipsInputId"
+                                name="hipsInput" class="form-control-x"
+                                 placeholder="Hips" required=""
+                                 value="36" step="any"><label for="hipsInputId">Hips</label>
+                              </div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <div class="form-label-group">
+                                <input type="number" id="waistInputId"
+                                name="waistInput" class="form-control-x"
+                                 placeholder="Waist" required="" value="33" step="any"><label for="waistInputId">Waist</label>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="form-row">
+                            <div class="col-md-6">
+                              <div class="form-label-group ">
+                                <input  type="number" id="neckInputId"
+                                name="necksInput" class="form-control-x"
+                                 placeholder="Neck" required=""
+                                onsubmit="myScript" value="13" step="any">
+                                <label for="neckInputId">Neck</label>
+                              </div>
+                            </div>
+
+
+
+                            <div class=" col-md-6">
+                              <div class="form-label-group">
+                                <input type="date" id="dateInputId"
+                                name="dateInput" class="form-control-x"
+                                  required="" value="2018-08-06" >
+                                 <label for="dateInputId">Date</label>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <!-- <div class="form-row">
+
+                            <div class=" col-md-6">
+
+                                <div class="form-label-group " id="activityLevel">
+
+                                    <div class="form-label-group" >
+                                      <input name = "activity" type = "radio" class="" value = "1.2" id="SedId" checked>
+                                      <label for="">Sedentary</label>
+
+                                    </div>
+
+                                    <div class="form-label-group" >
+                                      <input name = "activity" type = "radio" class="" value = "1.375" id="lightId" checked>
+                                      <label for="">Light</label>
+
+                                    </div>
+
+                                    <div class="form-label-group">
+                                        <input name = "activity" class="" type = "radio" value = "1.55" id="normalId" > <label for="">Normal</label>
+                                    </div>
+
+                                    <div class="form-label-group" >
+                                      <input name = "activity" type = "radio" class="" value = "1.725" id="veryId" checked>
+                                      <label for="">Very</label>
+
+                                    </div>
+
+                                    <div class="form-label-group">
+                                        <input name = "activity" class="" type = "radio" value = "1.9" id="extraId" > <label for="">Extra </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                          </div> -->
+
+
                         </div>
+                        <div class="form-row">
+                              <div class="form-label-group " id="activityLevel">
+
+                                  <div class="form-label-group" >
+                                    <input name = "activity" type = "radio" class="" value = "1.2" id="SedId" checked>
+                                    <label for="">Sedentary</label>
+
+                                  </div>
+
+                                  <div class="form-label-group" >
+                                    <input name = "activity" type = "radio" class="" value = "1.375" id="lightId" checked>
+                                    <label for="">Light</label>
+
+                                  </div>
+
+                                  <div class="form-label-group">
+                                      <input name = "activity" class="" type = "radio" value = "1.55" id="normalId" > <label for="">Normal</label>
+                                  </div>
+
+                                  <div class="form-label-group" >
+                                    <input name = "activity" type = "radio" class="" value = "1.725" id="veryId" checked>
+                                    <label for="">Very</label>
+
+                                  </div>
+
+                                  <div class="form-label-group">
+                                      <input name = "activity" class="" type = "radio" value = "1.9" id="extraId" > <label for="">Extra </label>
+                                  </div>
+                              </div>
+
+                        </div>
+
+
                     <!-- end from group -->
                         <div class="btn-row form-row">
                           <button class="btn btn-primary btn-block" type="submit">Submit</button >

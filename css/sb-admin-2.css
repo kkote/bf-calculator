@@ -74,7 +74,7 @@ body {
   }
 
   .form-control-x {
-    color: red;
+    color: darkblue;
     /* display: inline-flex; */
     display: flow-root;
     width: 100%;
@@ -93,6 +93,71 @@ body {
 
 }
 
+
+
+#maleOrFemale {
+  line-height: 1.5;
+padding: 4px 10px;
+  background-color: #fff;
+  background-image: none;
+  /* border: 1px solid #ccc; */
+  /* border-radius: 4px; */
+  /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); */
+  /* border: groove .5px; */
+  display: inline-flex;
+}
+
+#maleOrFemale label {
+  font-weight: normal;
+  margin: 6px;
+}
+
+#maleOrFemale .form-label-group {
+  border-radius: 4px;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+      /* border: groove .5px; */
+
+      padding: 4px;
+      margin-left: 3px;
+
+
+}
+
+
+
+#activityLevel {
+  line-height: 1.5;
+/* padding: 4px 10px; */
+  background-color: #fff;
+  background-image: none;
+  /* border: 1px solid #ccc; */
+  /* border-radius: 4px; */
+  /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); */
+  /* border: groove .5px; */
+  margin-left: 3rem;
+  display: inline-flex;
+}
+
+#activityLevel label {
+  font-weight: normal;
+  margin: 2px;
+}
+
+#activityLevel .form-label-group {
+  border-radius: 4px;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+      /* border: groove .5px; */
+
+      padding: 1px;
+      margin: 1px;
+
+
+}
+
+/* #activityLevel {
+  display: inline-flex;
+}
+ */
 
 
 
@@ -283,6 +348,13 @@ border-top: 1px solid #bcc5d0 !important;
 .sidebar .nav-third-level li a {
   padding-left: 52px;
 }
+
+
+
+
+
+
+
 @media (min-width: 768px) {
   .sidebar {
     z-index: 1;
@@ -296,6 +368,11 @@ border-top: 1px solid #bcc5d0 !important;
     margin-left: auto;
   }
 }
+
+
+
+
+
 .btn-outline {
   color: inherit;
   background-color: transparent;
