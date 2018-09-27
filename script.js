@@ -267,12 +267,14 @@ window.onload = function(){
   var newDeleteRow  = newRow.insertCell(6);
 
   //delete button
-  var newDelBtn = document.createElement("BUTTON");
+  var newDelBtn = document.createElement("i");
+  newDelBtn.setAttribute("class", "far fa-trash-alt");
   newDelBtn.addEventListener("click", function() {
   document.getElementById('tableId').deleteRow(this.parentNode.parentNode.rowIndex)
   });
-  var newDelete = document.createTextNode("Delete");
-  newDelBtn.appendChild(newDelete);
+  // var newDelete = document.createElement("i");
+  // newDelete.setAttribute("class", "far fa-trash-alt");
+  // newDelBtn.appendChild(newDelete);
   document.body.appendChild(newDelBtn);
 
 
