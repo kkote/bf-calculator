@@ -1,8 +1,8 @@
 node_modules
 bower_components
 
-
-/bf-admin temp
+/template
+/bf-admin-temp
 /temp
 /data
 
