@@ -60,7 +60,12 @@
 
      @media only screen and (max-width : 600px) {
 
-
+        .panel-body {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-top: 0px !important;
+        }
 
          .sidebar-nav {
 
@@ -125,18 +130,45 @@
          margin-left: 2rem;
     }
      #maleOrFemale label {
-         font-weight: normal;
-         margin: 6px;
+         letter-spacing: .75px;
+
+         /* font-weight: normal; */
+         margin: 3px;
     }
      #maleOrFemale .form-label-group {
-         border-radius: 4px;
-         box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            margin-right: 15px;
+
+         /* border-radius: 4px;
+         box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); */
         /* border: groove .5px;
          */
-         padding: 4px;
+         /* padding: 4px; */
         /* margin-left: 3px;
          */
+
     }
+
+    #maleOrFemale input {
+     -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  outline: none;
+  /* margin-right: 5px; */
+
+  position: relative;
+  top: 4px;
+
+
+    }
+
+
      #activityLevel {
          line-height: 1.5;
         /* padding: 4px 10px;
@@ -163,8 +195,8 @@
          margin: 2px;
     }
      #activityLevel .form-label-group {
-         border-radius: 4px;
-         box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+         /* border-radius: 4px;
+         box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); */
         /* border: groove .5px;
          */
         /* padding: 1px;
@@ -666,4 +698,24 @@
              border-right-width: 14px;
              border-left-width: 0;
         }
-         
+
+
+#activityLevel input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  outline: none;
+  margin-right: 5px;
+
+  position: relative;
+  top: 4px;
+
+}
+
