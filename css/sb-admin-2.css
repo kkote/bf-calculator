@@ -53,12 +53,26 @@
 
         display: none;
         }
+
+            #breadcrumb {
+    display: none;
+}
+
          }
 
 
 
-
      @media only screen and (max-width : 600px) {
+
+
+        h4 {
+
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+
+        }
+
+
 
         .panel-body {
             padding-left: 15px;
@@ -72,9 +86,9 @@
          display: none;
          }
 
-         #breadcrumb {
+         /* #breadcrumb {
              display: none;
-        }
+        } */
 
 
          .sidebar {
@@ -90,12 +104,23 @@
              margin-bottom: 0;
              padding: 0;
         }
+
+
+
+
          .form-row {
              /*display: inline-flex; */
         }
          .form-label-group{
              font-size: 14px;
         }
+
+        #activityLevel .form-label-group {
+            text-align: center;
+        }
+
+
+
          .form-control-x {
              color: darkblue;
             /* display: inline-flex;
@@ -115,7 +140,7 @@
     }
      #maleOrFemale {
          line-height: 1.5;
-         padding: 4px 10px;
+         /* padding: 4px 10px; */
          background-color: #fff;
          background-image: none;
         /* border: 1px solid #ccc;
@@ -127,7 +152,7 @@
         /* border: groove .5px;
          */
          display: inline-flex;
-         margin-left: 2rem;
+         /* margin-left: 2rem; */
     }
      #maleOrFemale label {
          letter-spacing: .75px;
@@ -199,6 +224,8 @@
          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); */
         /* border: groove .5px;
          */
+
+
         /* padding: 1px;
          margin: 1px;
          */
