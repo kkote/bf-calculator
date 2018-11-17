@@ -41,13 +41,18 @@
 
 
 
-  @media only screen and (max-width : 770px) {
+  @media only screen and (max-width : 768px) {
 
          .sidebar-nav {
 
-         display: none !important;
+         /*display: none !important;*/
 
          }
+         .sidebar {
+
+         /*display: none !important; */
+
+        }
 
           .chartRow {
 
@@ -57,6 +62,16 @@
             #breadcrumb {
     display: none;
 }
+
+        .list-group-item{
+        font-size: 14px;
+        padding: 5px 10px !important;
+        display: grid !important;
+
+        min-height: 50px;
+
+        }
+
 
          }
 
@@ -298,11 +313,13 @@
     }
      #wrapper {
          width: 100%;
+              background: #212020;
     }
      #page-wrapper {
          padding: 0 15px;
          min-height: 568px;
-         background-color: #bfc0c0ba;
+             background: #d0d0d0;
+         /*background-color: #bfc0c0ba; */
     }
      #page-wrapper-new {
          padding: 0 35px;
@@ -362,7 +379,7 @@
     }
      .sidebar .sidebar-nav.navbar-collapse {
          background: #19252be6;
-         min-height: 90rem;
+         /* min-height: 90rem; */
         height: -webkit-fill-available;
 
          padding-left: 0;
@@ -404,7 +421,7 @@
              margin-top: 51px;
 
              height: -webkit-fill-available;
-             min-height : 60em;
+             /* min-height : 60em; */
         }
 
     /*  @media only screen and (max-width : 767px) {
@@ -746,3 +763,7 @@
 
 }
 
+
+.list-group-item span {
+ min-height: 20px !important;
+}
