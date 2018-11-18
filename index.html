@@ -25,54 +25,53 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+                <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+                    <!--<span class="sr-only">Toggle navigation</span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                <!--</button>-->
                 <a class="navbar-brand" href="index.html">Body Stats Calculator</a>
             </div>
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                              <button class="btn btn-default" type="button">
-                                  <i class="fa fa-search"></i>
-                              </button>
-                          </span>
-                            </div>
+            <!--<div class="navbar-default sidebar" role="navigation">-->
+                <!--<div class="sidebar-nav navbar-collapse">-->
+                    <!--<ul class="nav" id="side-menu">-->
+                        <!--<li class="sidebar-search">-->
+                            <!--<div class="input-group custom-search-form">-->
+                                <!--<input type="text" class="form-control" placeholder="Search...">-->
+                                <!--<span class="input-group-btn">-->
+                              <!--<button class="btn btn-default" type="button">-->
+                                  <!--<i class="fa fa-search"></i>-->
+                              <!--</button>-->
+                          <!--</span>-->
+                            <!--</div>-->
 
-                        </li>
-                        <li>
-                            <a href="pages/index.html"> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="pages/chart.html"> Charts</a>
-                        </li>
-                        <li>
-                            <a href="pages/tables.html"> Tables</a>
-                        </li>
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="pages/index.html"> Dashboard</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="pages/chart.html"> Charts</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="pages/tables.html"> Tables</a>-->
+                        <!--</li>-->
 
-                        <li>
-                            <a href="pages/login.html"> Login</a>
-                        </li>
+                        <!--<li>-->
+                            <!--<a href="pages/login.html"> Login</a>-->
+                        <!--</li>-->
 
-                    </ul>
-                </div>
+                    <!--</ul>-->
+                <!--</div>-->
 
-            </div>
+            <!--</div>-->
 
         </nav>
 
         <div id="page-wrapper">
             <ol id="breadcrumb" class="breadcrumb">
                 <li class="breadcrumb-item">Home</li>
-                <li class="breadcrumb-item"><a href="#">Admin</a></li>
                 <li class="breadcrumb-item active">Dashboard</li>
                 <!-- Breadcrumb Menu-->
                 <li class="breadcrumb-menu d-md-down-none">
@@ -119,7 +118,7 @@
 
                                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                                     <div class="form-label-group">
-                                                        <input type="date" id="dateInputId" name="dateInput" class="form-control-x" required="" value="2018-08-06">
+                                                        <input type="date" id="dateInputId" name="dateInput" class="form-control-x" required="" value="2018-08-06" style="background: #b0c4de7d">
                                                         <label for="dateInputId">Date</label>
                                                     </div>
                                                 </div>
@@ -288,19 +287,7 @@
 
             <!-- /.panel -->
             <div class="row chartRow">
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="card-title mb-0">Progress Chart</h4>
-                        </div>
 
-                        <hr class="mb-4">
-                        <div class="panel-body">
-                            <canvas id="myChart"></canvas>
-                        </div>
-
-                    </div>
-                </div>
 
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="panel panel-default">
@@ -311,7 +298,7 @@
                                 <div class="btn-group">
                                     <!--<button type="button" class="btn btn-default btn-xs" id="newChartBtn">Chart</button>-->
                                     <button type="button" class="btn btn-default btn-xs" id="newEditBtn">Edit</button>
-                                    <button type="button" class="btn btn-default btn-xs" id="expandButton">Expand</button>
+                                    <!--<button type="button" class="btn btn-default btn-xs" id="expandButton">Expand</button>-->
                                 </div>
                             </div>
                         </div>
@@ -337,16 +324,16 @@
                                             </thead>
 
                                             <tbody>
-                                                <!--<tr>-->
-                                                    <!--<td>10/9/17</td>-->
-                                                    <!--<td>120</td>-->
-                                                    <!--<td>12</td>-->
-                                                    <!--<td>21.2</td>-->
-                                                    <!--<td>27</td>-->
-                                                    <!--<td>36</td>-->
-                                                    <!--<td><i class="far fa-trash-alt"></i></td>-->
+                                                <tr>
+                                                    <td>10/9/17</td>
+                                                    <td>120</td>
+                                                    <td>12</td>
+                                                    <td>21.2</td>
+                                                    <td>27</td>
+                                                    <td>36</td>
+                                                    <td><i class="far fa-trash-alt"></i></td>
 
-                                                <!--</tr>-->
+                                                </tr>
                                             </tbody>
 
                                         </table>
@@ -361,6 +348,22 @@
                     </div>
                 </div>
                 <!-- end row -->
+
+
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="card-title mb-0">Progress Chart</h4>
+                        </div>
+
+                        <hr class="mb-4">
+                        <div class="panel-body">
+                            <canvas id="myChart"></canvas>
+                        </div>
+
+                    </div>
+                </div>
+
 
             </div>
 

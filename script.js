@@ -76,11 +76,9 @@ window.onload = function () {
 	function newChartBtn() {
 		var getTable =
 			( document.getElementById( "tableId" ) );
-
 		var tableRow = 1;
 		var monthCell = 0;
 		var weightCell = 1;
-
 		var tableWeight = ( getTable.rows[ tableRow ].cells[ weightCell ].innerHTML );
 		var tableDate = ( getTable.rows[ tableRow ].cells[ monthCell ].innerHTML );
 		console.log( tableDate );
@@ -114,6 +112,7 @@ window.onload = function () {
 		}
 	} );
 
+
 	formId.onsubmit = function () {
 
 		// retrieving input data after submit
@@ -128,7 +127,6 @@ window.onload = function () {
 		var genderId = document.querySelector( 'input[name="gender"]:checked' ).value;
 		var activityNum = document.querySelector( 'input[name="activity"]:checked' ).value;
 		var activityNumber = parseFloat( activityNum );
-
 		var heightNum = ( ( feetNum * 12 ) + inchNum );
 
 
@@ -140,17 +138,14 @@ window.onload = function () {
 			if ( genderId == "Male" ) {
 				var percentFat = ( ( 86.010 * ( Log10( waistNum - neckNum ) ) ) - ( 70.041 * ( Log10( heightNum ) ) ) + 36.76 );
 				var bf = percentFat.toPrecision( 3 );
-				// console.log("male by is " + bf);
 				return bf
 			} else {
 				var percentFat = ( 163.205 * Log10( ( ( waistNum + hipNum ) - neckNum ) ) - 97.684 * Log10( heightNum ) - 78.387 );
 				var bf = percentFat.toPrecision( 3 );
-				// console.log("female by is " + bf);
 				return bf
 			};
 		};
 		var bf = findBf( genderId );
-
 
 		//calculate body mass index from inputs
 		var bmi = ( ( weightNum / ( heightNum * heightNum ) ) * 703 ).toPrecision( 3 );
@@ -212,9 +207,7 @@ window.onload = function () {
 		var bfToPercent = ( bf / 100 );
 		// calculate lean mass and fat mass
 		var fatMassNum = parseInt( weightNum * bfToPercent );
-//		fatMassNum = parseInt( fatMassNum );
 		var LeanMassNum = parseInt( weightNum - fatMassNum );
-//		LeanMassNum = parseInt( LeanMassNum );
 		document.getElementById( "displayLeanMass" ).innerHTML = LeanMassNum + " lbs";
 		document.getElementById( "displayFatMass" ).innerHTML = fatMassNum + " lbs";
 
@@ -224,23 +217,18 @@ window.onload = function () {
 			if ( genderId == "Male" ) {
 				var bmr = 66 + ( 6.23 * weightNum ) + ( 12.7 * heightNum ) - ( 6.8 * ageNum );
 				var bmrNum = bmr.toPrecision( 4 );
-//				console.log( "bmr by is " + bmrNum );
-//				console.log( "acitity in function " + activityNumber )
 				var tdee = ( bmrNum * activityNumber );
-//				console.log( "tdee is " + tdee );
+
 				return tdee
 			} else {
 				var bmr = 655 + ( 4.35 * weightNum ) + ( 4.7 * heightNum ) - ( 4.7 * ageNum );
 				var bmrNum = bmr.toPrecision( 4 );
 				var tdee = ( bmrNum * activityNumber );
-//				console.log( "female by is " + bmrNum );
 				return tdee
 			};
 		};
 
 		var tdee = (findTdee( genderId, activityNumber ).toPrecision( 4 ));
-//		var tdee = tdee.toPrecision( 4 );
-//		console.log( "tdee from function " + tdee );
 		document.getElementById( "displayTdee" ).innerHTML = tdee + " calories";
 
 
