@@ -72,8 +72,8 @@ window.onload = function () {
 
 	// addData();
 	// // adjustNov();
-
-	newChartBtn.addEventListener( "click", function () {
+//    newChartBtn.addEventListener( "click", function () {
+	function newChartBtn() {
 		var getTable =
 			( document.getElementById( "tableId" ) );
 
@@ -93,15 +93,12 @@ window.onload = function () {
 
 		addDataTable( monthsNumberForChart, weightForChartData );
 
-	} );
-
-	//TODO most recent table entry, then graph whole table(update)
+	} ;
 
 	function addDataTable( monthsLabel, numberData ) {
 		myChart.data.datasets[ 0 ].data[ monthsLabel ] = numberData;
 		myChart.update();
 	};
-
 
 	var formId = document.getElementById( "calcForm" );
 
@@ -129,14 +126,11 @@ window.onload = function () {
 		var feetNum = document.getElementById( "feetInputId" ).valueAsNumber;
 		var inchNum = document.getElementById( "inchInputId" ).valueAsNumber;
 		var genderId = document.querySelector( 'input[name="gender"]:checked' ).value;
-
 		var activityNum = document.querySelector( 'input[name="activity"]:checked' ).value;
-//		console.log( activityNum );
 		var activityNumber = parseFloat( activityNum );
 
-
-
 		var heightNum = ( ( feetNum * 12 ) + inchNum );
+
 
 		//find body fat percentage by gender
 		function findBf( genderId ) {
@@ -156,14 +150,14 @@ window.onload = function () {
 			};
 		};
 		var bf = findBf( genderId );
-		// console.log(bf);
-		//calculate bmi
+
+
+		//calculate body mass index from inputs
 		var bmi = ( ( weightNum / ( heightNum * heightNum ) ) * 703 ).toPrecision( 3 );
-//		var bmi = bmi.toPrecision( 3 );
 		document.getElementById( "displayBmi" ).innerHTML = bmi;
 		document.getElementById( "displayInput" ).innerHTML = bf + "%";
 
-		// putting bmi stats in side panel
+		// find and put bmi range in side panel
 		function displayBmiRange( bmi ) {
 			if ( bmi < 18.5 ) {
 				return "Underweight";
@@ -277,6 +271,10 @@ window.onload = function () {
 		} );
 		document.body.appendChild( newDelBtn );
 		deleteRow.append( newDelBtn );
+
+
+
+    newChartBtn();
 
 
 		return false

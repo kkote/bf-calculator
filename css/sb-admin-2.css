@@ -14,8 +14,7 @@
  .form-group{
      padding:10px;
 }
-/* @media screen and (-webkit-min-device-pixel-ratio: 0){
-     */
+
      @media only screen and (min-width : 601px) {
          .form-control-x {
              display: block;
@@ -32,28 +31,10 @@
              box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
         }
 
-
-
-
-
-
     }
 
 
-
   @media only screen and (max-width : 768px) {
-
-         .sidebar-nav {
-
-         /*display: none !important;*/
-
-         }
-         .sidebar {
-
-         /*display: none !important; */
-
-        }
-
           .chartRow {
 
         display: none;
@@ -79,15 +60,12 @@
 
      @media only screen and (max-width : 600px) {
 
-
         h4 {
 
         margin-top: 5px !important;
         margin-bottom: 5px !important;
 
         }
-
-
 
         .panel-body {
             padding-left: 15px;
@@ -101,16 +79,10 @@
          display: none;
          }
 
-         /* #breadcrumb {
-             display: none;
-        } */
-
-
          .sidebar {
              display: none;
              color: red;
         }
-
 
          .panel-heading {
              padding: 4px !important;
@@ -121,10 +93,7 @@
         }
 
 
-
-
          .form-row {
-             /*display: inline-flex; */
         }
          .form-label-group{
              font-size: 14px;
@@ -135,11 +104,8 @@
         }
 
 
-
          .form-control-x {
              color: darkblue;
-            /* display: inline-flex;
-             */
              display: flow-root;
              width: 100%;
              height: 34px;
@@ -155,76 +121,24 @@
     }
      #maleOrFemale {
          line-height: 1.5;
-         /* padding: 4px 10px; */
+
          background-color: #fff;
          background-image: none;
-        /* border: 1px solid #ccc;
-         */
-        /* border-radius: 4px;
-         */
-        /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-         */
-        /* border: groove .5px;
-         */
          display: inline-flex;
-         /* margin-left: 2rem; */
     }
      #maleOrFemale label {
          letter-spacing: .75px;
-
-         /* font-weight: normal; */
          margin: 3px;
     }
      #maleOrFemale .form-label-group {
             margin-right: 15px;
-
-         /* border-radius: 4px;
-         box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); */
-        /* border: groove .5px;
-         */
-         /* padding: 4px; */
-        /* margin-left: 3px;
-         */
-
-    }
-
-    #maleOrFemale input {
-     -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-
-  border: 2px solid #999;
-  transition: 0.2s all linear;
-  outline: none;
-  /* margin-right: 5px; */
-
-  position: relative;
-  top: 4px;
-
-
     }
 
 
      #activityLevel {
          line-height: 1.5;
-        /* padding: 4px 10px;
-         */
          background-color: #fff;
          background-image: none;
-        /* border: 1px solid #ccc;
-         */
-        /* border-radius: 4px;
-         */
-        /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-         */
-        /* border: groove .5px;
-         */
-        /* margin-left: 3rem;
-         */
          display: inline-flex;
     }
      #activityLabel{
@@ -234,21 +148,7 @@
          font-weight: normal;
          margin: 2px;
     }
-     #activityLevel .form-label-group {
-         /* border-radius: 4px;
-         box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); */
-        /* border: groove .5px;
-         */
 
-
-        /* padding: 1px;
-         margin: 1px;
-         */
-    }
-    /* #activityLevel {
-         display: inline-flex;
-    }
-     */
      .nav a {
          color: #f5f5f5;
          padding: 1rem 1.25rem !important;
@@ -319,7 +219,6 @@
          padding: 0 15px;
          min-height: 568px;
              background: #d0d0d0;
-         /*background-color: #bfc0c0ba; */
     }
      #page-wrapper-new {
          padding: 0 35px;
@@ -389,8 +288,6 @@
          padding: 15px;
     }
      .sidebar ul li {
-        /* border-bottom: 1px solid #e7e7e7;
-         */
     }
      .sidebar ul li a.active {
          background-color: #eeeeee;
@@ -419,17 +316,9 @@
              position: absolute;
              width: 150px;
              margin-top: 51px;
-
              height: -webkit-fill-available;
-             /* min-height : 60em; */
+
         }
-
-    /*  @media only screen and (max-width : 767px) {
-    .sidebar-nav .sidebar .navbar-collapse {
-
-        display: none !important;
-    } */
-
 
          .navbar-top-links .dropdown-messages, .navbar-top-links .dropdown-tasks, .navbar-top-links .dropdown-alerts {
              margin-left: auto;
@@ -744,7 +633,7 @@
         }
 
 }
-#activityLevel input {
+ /* #activityLevel input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -761,7 +650,7 @@
   position: relative;
   top: 4px;
 
-}
+} */
 
 
 .list-group-item span {

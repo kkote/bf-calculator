@@ -9,13 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <!--<link href="css/sb-admin-2.css" rel="stylesheet">-->
+     <link href="css/ref.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
-
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.js" integrity="sha256-uAmtcHxcK7o0T9gFmupKERz4zIJwFBUkWZFtzqUZ5ag=" crossorigin="anonymous"></script> -->
-    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 
     <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
 
@@ -23,8 +20,8 @@
 
 <body>
 
-    <div id="wrapper">
-
+    <div id="wrapper">
+
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -97,21 +94,10 @@
                         <div class="panel-body">
 
                             <div class="card card-register mx-auto mt-5">
-                                <!-- <div class="card-header">Enter in Inches</div> -->
+
                                 <div class="card-body">
 
                                     <form id="calcForm" class="vertical">
-                                        <!--<div class="form-label-group " id="maleOrFemale">-->
-
-                                            <!--<div class="form-label-group">-->
-                                                <!--<input name="gender" type="radio" class="" value="Male" id="maleId" checked>-->
-                                                <!--<label for="maleOrFemale">Male</label>-->
-                                            <!--</div>-->
-                                            <!--<div class="form-label-group">-->
-                                                <!--<input name="gender" class="" type="radio" value="Female" id="femaleId">-->
-                                                <!--<label for="maleOrFemale">Female</label>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
 
                                         <div class="form-group">
 
@@ -131,8 +117,6 @@
                                                      </div>
 
 
-
-
                                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                                     <div class="form-label-group">
                                                         <input type="date" id="dateInputId" name="dateInput" class="form-control-x" required="" value="2018-08-06">
@@ -141,9 +125,6 @@
                                                 </div>
 
                                             </div>
-
-
-
 
 
                                             <div class="form-row">
@@ -175,6 +156,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div style="font-size: small;">Enter in Inches</div>
                                             <div class="form-row">
                                                 <div class="col-xs-4 col-sm-4 col-md-4">
                                                     <div class="form-label-group">
@@ -198,41 +180,35 @@
                                                         <label for="neckInputId">Neck</label>
                                                     </div>
                                                 </div>
-                                                <!--<div class="col-xs-8 col-sm-4 col-md-6">-->
-                                                    <!--<div class="form-label-group">-->
-                                                        <!--<input type="date" id="dateInputId" name="dateInput" class="form-control-x" required="" value="2018-08-06">-->
-                                                        <!--<label for="dateInputId">Date</label>-->
-                                                    <!--</div>-->
-                                                <!--</div>-->
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-label-group " id="activityLevel">
                                                 <label id="activityLabel">Activity Level:</label>
                                                 <div class="form-label-group">
-                                                    <input name="activity" type="radio" class="" value="1.2" id="SedId"><label for="">None</label>
+                                                    <input name="activity" type="radio" class="" value="1.2" id="SedId"><label >None</label>
                                                 </div>
 
                                                 <div class="form-label-group">
-                                                    <input name="activity" type="radio" class="" value="1.375" id="lightId"><label for="">Light</label>
+                                                    <input name="activity" type="radio" class="" value="1.375" id="lightId"><label >Light</label>
                                                 </div>
 
                                                 <div class="form-label-group">
-                                                    <input name="activity" class="" type="radio" value="1.55" id="normalId" checked><label for="">Normal</label>
+                                                    <input name="activity" class="" type="radio" value="1.55" id="normalId" checked><label >Normal</label>
                                                 </div>
                                                 <div class="form-label-group">
-                                                    <input name="activity" type="radio" class="" value="1.725" id="veryId"><label for="">Very</label>
+                                                    <input name="activity" type="radio" class="" value="1.725" id="veryId"><label >Very</label>
                                                 </div>
 
                                                 <div class="form-label-group">
-                                                    <input name="activity" class="" type="radio" value="1.9" id="extraId"><label for="">Extra </label>
+                                                    <input name="activity" class="" type="radio" value="1.9" id="extraId"><label >Extra </label>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <!-- end from group -->
                                         <div class="btn-row form-row">
-                                            <button class="btn btn-primary btn-block" type="submit" style="margin-right: 10px">Submit</button>
+                                            <button id="newChartBtn" class="btn btn-primary btn-block" type="submit" style="margin-right: 10px">Submit</button>
                                             <button class="btn btn-warning btn-block" type="reset" value="Reset">Reset</button>
                                         </div>
                                     </form>
@@ -257,17 +233,17 @@
                                 <!-- bf percentage output -->
 
                                 <div class="list-group-item">
-                                    BF percentage <span id="displayInput">
+                                    Body Fat <span id="displayInput">
                             </span>
                                 </div>
 
                                 <div class="list-group-item">
-                                    Bf Range <span id="displayBfRange">
+                                    BF Range <span id="displayBfRange">
                               </span>
                                 </div>
 
                                 <div class="list-group-item">
-                                    BMI <span id="displayBmi">
+                                    Body Mass Index <span id="displayBmi">
                               </span>
                                 </div>
 
@@ -285,9 +261,15 @@
                                     Fat Mass <span  id="displayFatMass">
                               </span>
                                 </div>
+
                                 <div class="list-group-item">
-                                    TDEE <span  id="displayTdee">
+                                    TDEE
+                                    <span class="list-group-item tooltip"> (Info)<span class="tooltiptext">Total Daily Energy Expenditure</span></span>
+
+                                    <span  id="displayTdee">
+
                               </span>
+
                                 </div>
 
                             </div>
@@ -327,7 +309,7 @@
                             <h4 class="card-title mb-0">Timeline</h4>
                             <div class="pull-right">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-xs" id="newChartBtn">Chart</button>
+                                    <!--<button type="button" class="btn btn-default btn-xs" id="newChartBtn">Chart</button>-->
                                     <button type="button" class="btn btn-default btn-xs" id="newEditBtn">Edit</button>
                                     <button type="button" class="btn btn-default btn-xs" id="expandButton">Expand</button>
                                 </div>
