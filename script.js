@@ -131,7 +131,7 @@ window.onload = function () {
 		var genderId = document.querySelector( 'input[name="gender"]:checked' ).value;
 
 		var activityNum = document.querySelector( 'input[name="activity"]:checked' ).value;
-		console.log( activityNum );
+//		console.log( activityNum );
 		var activityNumber = parseFloat( activityNum );
 
 
@@ -158,8 +158,8 @@ window.onload = function () {
 		var bf = findBf( genderId );
 		// console.log(bf);
 		//calculate bmi
-		var bmi = ( ( weightNum / ( heightNum * heightNum ) ) * 703 );
-		var bmi = bmi.toPrecision( 3 );
+		var bmi = ( ( weightNum / ( heightNum * heightNum ) ) * 703 ).toPrecision( 3 );
+//		var bmi = bmi.toPrecision( 3 );
 		document.getElementById( "displayBmi" ).innerHTML = bmi;
 		document.getElementById( "displayInput" ).innerHTML = bf + "%";
 
@@ -217,10 +217,10 @@ window.onload = function () {
 		document.getElementById( "displayBfRange" ).innerText = bfRangeOutput;
 		var bfToPercent = ( bf / 100 );
 		// calculate lean mass and fat mass
-		var fatMassNum = ( weightNum * bfToPercent );
-		fatMassNum = parseInt( fatMassNum );
-		var LeanMassNum = ( weightNum - fatMassNum );
-		LeanMassNum = parseInt( LeanMassNum );
+		var fatMassNum = parseInt( weightNum * bfToPercent );
+//		fatMassNum = parseInt( fatMassNum );
+		var LeanMassNum = parseInt( weightNum - fatMassNum );
+//		LeanMassNum = parseInt( LeanMassNum );
 		document.getElementById( "displayLeanMass" ).innerHTML = LeanMassNum + " lbs";
 		document.getElementById( "displayFatMass" ).innerHTML = fatMassNum + " lbs";
 
@@ -230,66 +230,57 @@ window.onload = function () {
 			if ( genderId == "Male" ) {
 				var bmr = 66 + ( 6.23 * weightNum ) + ( 12.7 * heightNum ) - ( 6.8 * ageNum );
 				var bmrNum = bmr.toPrecision( 4 );
-				console.log( "bmr by is " + bmrNum );
-				console.log( "acitity in function " + activityNumber )
+//				console.log( "bmr by is " + bmrNum );
+//				console.log( "acitity in function " + activityNumber )
 				var tdee = ( bmrNum * activityNumber );
-				console.log( "tdee is " + tdee );
+//				console.log( "tdee is " + tdee );
 				return tdee
 			} else {
 				var bmr = 655 + ( 4.35 * weightNum ) + ( 4.7 * heightNum ) - ( 4.7 * ageNum );
 				var bmrNum = bmr.toPrecision( 4 );
 				var tdee = ( bmrNum * activityNumber );
-				console.log( "female by is " + bmrNum );
+//				console.log( "female by is " + bmrNum );
 				return tdee
 			};
 		};
 
-		var tdee = findTdee( genderId, activityNumber );
-		var tdee = tdee.toPrecision( 4 );
-		console.log( "tdee from function " + tdee );
+		var tdee = (findTdee( genderId, activityNumber ).toPrecision( 4 ));
+//		var tdee = tdee.toPrecision( 4 );
+//		console.log( "tdee from function " + tdee );
 		document.getElementById( "displayTdee" ).innerHTML = tdee + " calories";
 
 
 
 		// add to table
-		var tableRef = document.getElementById( 'tableId' ).getElementsByTagName( 'tbody' )[ 0 ];
+		var table = document.getElementById( 'tableId' );
+		var tbody = table.getElementsByTagName( 'tbody' )[ 0 ];
+
 		// Insert a row in the table at the last row
-		// var newRow   = tableRef.insertRow(tableRef.rows.length);
-		var newRow = tableRef.insertRow( 0 );
-		// Insert a cell in the row at index 0
-		var newDateRow = newRow.insertCell( 0 );
-		var newWeightRow = newRow.insertCell( 1 );
-		var newBfRow = newRow.insertCell( 2 );
-		var newNeckRow = newRow.insertCell( 3 );
-		var newWaistRow = newRow.insertCell( 4 );
-		var newHipsRow = newRow.insertCell( 5 );
-		var newDeleteRow = newRow.insertCell( 6 );
+		var newRow = tbody.insertRow( 0 );
+
+		// Insert a cell in the row at and  Append a text node to the cell
+		// insert cell, create text node with form input, and append to cell.
+
+		var dateRow = newRow.insertCell( 0 ).append( document.createTextNode( dateNum ) );
+		var weightRow = newRow.insertCell( 1 ).append(document.createTextNode( weightNum ) );
+		var bfRow = newRow.insertCell( 2 ).append( document.createTextNode( bf ) );
+		var neckRow= newRow.insertCell( 3 ).append( document.createTextNode( neckNum ) );
+		var waistRow = newRow.insertCell( 4 ).append( document.createTextNode( waistNum ) );
+		var hipsRow = newRow.insertCell( 5 ).append (document.createTextNode( hipNum ) );
+		var deleteRow = newRow.insertCell( 6 );
 
 		//delete button
 		var newDelBtn = document.createElement( "i" );
 		newDelBtn.setAttribute( "class", "far fa-trash-alt" );
 		newDelBtn.addEventListener( "click", function () {
-			document.getElementById( 'tableId' ).deleteRow( this.parentNode.parentNode.rowIndex )
+			table.deleteRow( this.parentNode.parentNode.rowIndex )
 		} );
-		// var newDelete = document.createElement("i");
-		// newDelete.setAttribute("class", "far fa-trash-alt");
-		// newDelBtn.appendChild(newDelete);
 		document.body.appendChild( newDelBtn );
-
-
-		// Append a text node to the cell
-		newDateRow.append( document.createTextNode( dateNum ) );
-		newWeightRow.append( document.createTextNode( weightNum ) );
-		newBfRow.appendChild( document.createTextNode( bf ) );
-		newNeckRow.appendChild( document.createTextNode( neckNum ) );
-		newWaistRow.appendChild( document.createTextNode( waistNum ) );
-		newHipsRow.appendChild( document.createTextNode( hipNum ) );
-		newDeleteRow.appendChild( newDelBtn );
+		deleteRow.append( newDelBtn );
 
 
 		return false
 	}
-
 
 
 

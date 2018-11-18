@@ -766,4 +766,8 @@
 
 .list-group-item span {
  min-height: 20px !important;
+ font-weight: bold;
+ float: right;
 }
+
+
