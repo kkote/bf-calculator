@@ -35,30 +35,6 @@ window.onload = function () {
 		}
 	};
 
-
-	// var options = {
-	//   scales: {
-	//     yAxes: [{
-	//       ticks: {
-	//         beginAtZero: false
-	//       }
-	//     }]
-	//
-	//   },
-	//   scales: xAxes: [{
-	//       type: 'time',
-	//       distribution: 'linear',
-	//       time: {
-	//           displayFormats: {
-	//               quarter: 'MMM YYYY' sep 2015
-	//               quarter: 'MMM D' sep 4
-	//           }
-	//       }
-	//   }]
-	//
-	// };
-
-
 	init();
 
 	function init() {
@@ -70,9 +46,7 @@ window.onload = function () {
 		} );
 	}
 
-	// addData();
-	// // adjustNov();
-//    newChartBtn.addEventListener( "click", function () {
+
 	function newChartBtn() {
 		var getTable =
 			( document.getElementById( "tableId" ) );
@@ -81,11 +55,7 @@ window.onload = function () {
 		var weightCell = 1;
 		var tableWeight = ( getTable.rows[ tableRow ].cells[ weightCell ].innerHTML );
 		var tableDate = ( getTable.rows[ tableRow ].cells[ monthCell ].innerHTML );
-		console.log( tableDate );
-		console.log( tableWeight );
-		// var monthDayFormat = moment(tableDate).format("MMM D");
 		var monthFormat = moment( tableDate ).format( "MM" );
-		// var weightForChartData = 180;
 		var monthsNumberForChart = ( monthFormat - 1 );
 		var weightForChartData = tableWeight;
 
@@ -114,6 +84,7 @@ window.onload = function () {
 
 
 	formId.onsubmit = function () {
+
 
 		// retrieving input data after submit
 		var dateNum = document.getElementById( "dateInputId" ).value;
