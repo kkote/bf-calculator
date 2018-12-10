@@ -2,331 +2,328 @@
 <html>
 
 <head>
-    <title>Bf Calculator</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link href="css/sb-admin-2.css" rel="stylesheet">
-    <link href="css/bootstraps.css" rel="stylesheet">
-    <!--<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+  <title>Bf Calculator</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="css/sb-admin-2.css" rel="stylesheet">
+  <link href="css/bootstraps.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
 
 </head>
 
 <body>
 
-    <div id="wrapper">
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">Body Stats Calculator</a>
+  <div id="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">Body Stats Calculator</a>
+      </div>
+    </nav>
+
+    <div id="page-wrapper">
+      <ol id="breadcrumb" class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item active">Dashboard</li>
+        <!-- Breadcrumb Menu-->
+        <li class="breadcrumb-menu d-md-down-none">
+          <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <a class="btn" href="#"><i class="icon-speech"></i></a>
+          </div>
+        </li>
+      </ol>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-8">
+          <div class="panel panel-default">
+
+            <div id="panel1" class=" panel-heading">
+              <h4>Your Measurements</h4>
             </div>
-        </nav>
+            <hr class="mb-4">
+            <div class="panel-body">
 
-        <div id="page-wrapper">
-            <ol id="breadcrumb" class="breadcrumb">
-                <li class="breadcrumb-item">Home</li>
-                <li class="breadcrumb-item active">Dashboard</li>
-                <!-- Breadcrumb Menu-->
-                <li class="breadcrumb-menu d-md-down-none">
-                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <a class="btn" href="#"><i class="icon-speech"></i></a>
-                    </div>
-                </li>
-            </ol>
+              <div class="card card-register mx-auto mt-5">
+                <div class="card-body">
+                  <form id="calcForm" class="vertical">
+                    <div class="form-group">
+                      <div class="form-row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                          <div class="form-label-group " id="maleOrFemale">
 
-            <div class="row">
-                <div class="col-xs-12 col-sm-8 col-md-8">
-                    <div class="panel panel-default">
-
-                        <div id="panel1" class=" panel-heading">
-                            <h4>Your Measurements</h4>
-                        </div>
-                        <hr class="mb-4">
-                        <div class="panel-body">
-
-                            <div class="card card-register mx-auto mt-5">
-                                <div class="card-body">
-                                    <form id="calcForm" class="vertical">
-                                        <div class="form-group">
-                                            <div class="form-row">
-                                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                                   <div class="form-label-group " id="maleOrFemale">
-
-                                            <div class="form-label-group">
-                                                <input name="gender" type="radio" class="" value="Male" id="maleId" checked>
-                                                <label for="maleOrFemale">Male</label>
-                                            </div>
-                                            <div class="form-label-group">
-                                                <input name="gender" class="" type="radio" value="Female" id="femaleId" >
-                                                <label for="maleOrFemale">Female</label>
-                                            </div>
-                                        </div>
-                                                     </div>
-
-
-                                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                                    <div class="form-label-group">
-                                                        <input type="date" id="dateInputId" name="dateInput" class="form-control-x" required="" value="2018-08-06" style="background: #b0c4de7d" >
-                                                        <label for="dateInputId">Date</label>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-
-                                            <div class="form-row">
-                                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                                    <div class="form-label-group">
-
-                                                        <label for="ageInputId"><span class="labelInput">Age</span>  <input type="number" id="ageInputId" name="AgeInput" class="form-control-x" required="" step=""
-                                                        value="26" placeholder="Age"> </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                                    <div class="form-label-group">
-                                                        <label for="weightInputId"><span class="labelInput">Weight</span>  <input type="number" id="weightInputId" name="weightInput" class="form-control-x" required="" step="any" value="133"></label>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-row">
-                                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                                    <div class="form-label-group">
-
-                                                        <label for="feetInputId"><span class="labelInput">Feet</span><input type="number" id="feetInputId" name="feetInput" class="form-control-x" placeholder="5" required="" value="5" step="any"></label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                                    <div class="form-label-group">
-
-                                                        <label for="inchInputId"><span class="labelInput">Inches</span><input type="number" id="inchInputId" name="inchInput" class="form-control-x" placeholder="3" required="" value="4" step="any"></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div style="font-size: small;">Enter in Inches</div>
-                                            <div class="form-row">
-                                                <div class="col-xs-4 col-sm-4 col-md-4">
-                                                    <div class="form-label-group">
-
-                                                        <label for="hipsInputId"><span class="labelInput">Hips</span><input type="number" id="hipsInputId" name="hipsInput" class="form-control-x" placeholder="Hips" required="" value="36" step="any"></label>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-xs-4 col-sm-4 col-md-4">
-                                                    <div class="form-label-group">
-
-                                                        <label for="waistInputId"><span class="labelInput">Waist</span>  <input type="number" id="waistInputId" name="waistInput" class="form-control-x" placeholder="Waist" required="" value="33" step="any"></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-row">
-                                                <div class="col-xs-4 col-sm-4 col-md-4">
-                                                    <div class="form-label-group ">
-
-                                                        <label for="neckInputId"><span class="labelInput">Neck</span>  <input type="number" id="neckInputId" name="necksInput" class="form-control-x" placeholder="Neck" required="" onsubmit="myScript" value="13" step="any"></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-label-group " id="activityLevel">
-                                                <label id="activityLabel">Activity Level:</label>
-                                                <div class="form-label-group">
-                                                    <input name="activity" type="radio" class="" value="1.2" id="SedId"><label >None</label>
-                                                </div>
-
-                                                <div class="form-label-group">
-                                                    <input name="activity" type="radio" class="" value="1.375" id="lightId"><label >Light</label>
-                                                </div>
-
-                                                <div class="form-label-group">
-                                                    <input name="activity" class="" type="radio" value="1.55" id="normalId" checked><label >Normal</label>
-                                                </div>
-                                                <div class="form-label-group">
-                                                    <input name="activity" type="radio" class="" value="1.725" id="veryId"><label >Very</label>
-                                                </div>
-
-                                                <div class="form-label-group">
-                                                    <input name="activity" class="" type="radio" value="1.9" id="extraId"><label >Extra </label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- end from group -->
-                                        <div class="btn-row form-row">
-                                            <button id="newChartBtn" class="btn btn-primary btn-block" type="submit" style="margin-right: 10px">Submit</button>
-                                            <button class="btn btn-warning btn-block" type="reset" value="Reset">Reset</button>
-                                        </div>
-                                    </form>
-                                    <!-- end card body -->
-                                </div>
+                            <div class="form-label-group">
+                              <input name="gender" type="radio" class="" value="Male" id="maleId" checked>
+                              <label for="maleOrFemale">Male</label>
                             </div>
-                            <!-- end panel body -->
-                        </div>
-                        <!-- end panel-default -->
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-4 col-md-4">
-                    <div class="panel panel-default">
-                        <div id="panel2" class="panel-heading">
-                            <h4 class="card-title mb-0">Your Stats</h4>
-                        </div>
-                        <hr class="mb-4">
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="list-group">
-                                <!-- bf percentage output -->
-
-                                <div class="list-group-item">
-                                    Body Fat <span id="displayInput">
-                            </span>
-                                </div>
-
-                                <div class="list-group-item">
-                                    BF Range <span id="displayBfRange">
-                              </span>
-                                </div>
-
-                                <div class="list-group-item">
-                                    Body Mass Index <span id="displayBmi">
-                              </span>
-                                </div>
-
-                                <div class="list-group-item">
-                                    BMI Range <span id="displayBmiRange">
-                              </span>
-                                </div>
-
-                                <div class="list-group-item">
-                                    Lean Mass <span  id="displayLeanMass">
-                              </span>
-                                </div>
-
-                                <div class="list-group-item">
-                                    Fat Mass <span  id="displayFatMass">
-                              </span>
-                                </div>
-
-                                <div class="list-group-item">
-                                    TDEE
-                                    <span class="list-group-item tooltip"> <span class="hidden">(Info)</span><span class="tooltiptext">Total Daily Energy Expenditure</span></span>
-
-                                    <span  id="displayTdee">
-
-                              </span>
-
-                                </div>
-
+                            <div class="form-label-group">
+                              <input name="gender" class="" type="radio" value="Female" id="femaleId">
+                              <label for="maleOrFemale">Female</label>
                             </div>
-                            <!-- /.list-group -->
-
+                          </div>
                         </div>
-                        <!-- /.panel-body -->
-                    </div>
-                </div>
 
+
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                          <div class="form-label-group">
+                            <input type="date" id="dateInputId" name="dateInput" class="form-control-x" required="" value="2018-08-06" style="background: #b0c4de7d">
+                            <label for="dateInputId">Date</label>
+                          </div>
+                        </div>
+
+                      </div>
+
+
+                      <div class="form-row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                          <div class="form-label-group">
+
+                            <label for="ageInputId"><span class="labelInput">Age</span> <input type="number" id="ageInputId" name="AgeInput" class="form-control-x" required="" step="" value="26" placeholder="Age"> </label>
+                          </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                          <div class="form-label-group">
+                            <label for="weightInputId"><span class="labelInput">Weight</span> <input type="number" id="weightInputId" name="weightInput" class="form-control-x" required="" step="any" value="133"></label>
+
+
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                          <div class="form-label-group">
+
+                            <label for="feetInputId"><span class="labelInput">Feet</span><input type="number" id="feetInputId" name="feetInput" class="form-control-x" placeholder="5" required="" value="5" step="any"></label>
+                          </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                          <div class="form-label-group">
+
+                            <label for="inchInputId"><span class="labelInput">Inches</span><input type="number" id="inchInputId" name="inchInput" class="form-control-x" placeholder="3" required="" value="4" step="any"></label>
+                          </div>
+                        </div>
+                      </div>
+                      <div style="font-size: small;">Enter in Inches</div>
+                      <div class="form-row">
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                          <div class="form-label-group">
+
+                            <label for="hipsInputId"><span class="labelInput">Hips</span><input type="number" id="hipsInputId" name="hipsInput" class="form-control-x" placeholder="Hips" required="" value="36" step="any"></label>
+                          </div>
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                          <div class="form-label-group">
+
+                            <label for="waistInputId"><span class="labelInput">Waist</span> <input type="number" id="waistInputId" name="waistInput" class="form-control-x" placeholder="Waist" required="" value="33" step="any"></label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-row">
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                          <div class="form-label-group ">
+
+                            <label for="neckInputId"><span class="labelInput">Neck</span> <input type="number" id="neckInputId" name="necksInput" class="form-control-x" placeholder="Neck" required="" onsubmit="myScript" value="13" step="any"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-label-group " id="activityLevel">
+                        <label id="activityLabel">Activity Level:</label>
+                        <div class="form-label-group">
+                          <input name="activity" type="radio" class="" value="1.2" id="SedId"><label>None</label>
+                        </div>
+
+                        <div class="form-label-group">
+                          <input name="activity" type="radio" class="" value="1.375" id="lightId"><label>Light</label>
+                        </div>
+
+                        <div class="form-label-group">
+                          <input name="activity" class="" type="radio" value="1.55" id="normalId" checked><label>Normal</label>
+                        </div>
+                        <div class="form-label-group">
+                          <input name="activity" type="radio" class="" value="1.725" id="veryId"><label>Very</label>
+                        </div>
+
+                        <div class="form-label-group">
+                          <input name="activity" class="" type="radio" value="1.9" id="extraId"><label>Extra </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- end from group -->
+                    <div class="btn-row form-row">
+                      <button id="newChartBtn" class="btn btn-primary btn-block" type="submit" style="margin-right: 10px">Submit</button>
+                      <button class="btn btn-warning btn-block" type="reset" value="Reset">Reset</button>
+                    </div>
+                  </form>
+                  <!-- end card body -->
+                </div>
+              </div>
+              <!-- end panel body -->
             </div>
-
-            <div class="row">
-
-            </div>
-
-            <!-- /.panel -->
-            <div class="row chartRow">
-
-
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-
-                            <h4 class="card-title mb-0">Timeline</h4>
-                            <div class="pull-right">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-xs" id="newEditBtn">Edit</button>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="mb-4">
-
-                        <!-- Use as chart for database results -->
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="">
-                                    <div class="table-responsive">
-                                        <table class="table  table-hover table-striped" id="tableId">
-                                            <thead>
-                                                <tr>
-                                                    <th>Date</th>
-                                                    <th>Weight</th>
-                                                    <th>BF %</th>
-                                                    <th>Neck</th>
-                                                    <th>Waist</th>
-                                                    <th>Hip</th>
-                                                    <th>Delete</th>
-                                                </tr>
-                                            </thead>
-
-                                            <tbody>
-                                                <tr>
-                                                    <td>10/9/17</td>
-                                                    <td>120</td>
-                                                    <td>12</td>
-                                                    <td>21.2</td>
-                                                    <td>27</td>
-                                                    <td>36</td>
-                                                    <td><i class="far fa-trash-alt"></i></td>
-
-                                                </tr>
-                                            </tbody>
-
-                                        </table>
-                                    </div>
-                                    <!-- /.table-responsive -->
-                                </div>
-
-                            </div>
-                            <!-- /.row -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                </div>
-                <!-- end row -->
-
-
-                  <div class="col-xs-6 col-sm-6 col-md-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="card-title mb-0">Progress Chart</h4>
-                        </div>
-
-                        <hr class="mb-4">
-                        <div class="panel-body">
-                            <canvas id="myChart"></canvas>
-                        </div>
-
-                    </div>
-                </div>
-
-
-            </div>
-
+            <!-- end panel-default -->
+          </div>
         </div>
-    </div>
-    <!-- /#page-wrapper -->
 
-    <!-- <script src="test.js"></script> -->
-    <!-- <script src="moment.js"></script> -->
-    <script src="script.js"></script>
-    <!-- <script src="graph.js"></script> -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="panel panel-default">
+            <div id="panel2" class="panel-heading">
+              <h4 class="card-title mb-0">Your Stats</h4>
+            </div>
+            <hr class="mb-4">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+              <div class="list-group">
+                <!-- bf percentage output -->
+
+                <div class="list-group-item">
+                  Body Fat <span id="displayInput">
+                  </span>
+                </div>
+
+                <div class="list-group-item">
+                  BF Range <span id="displayBfRange">
+                  </span>
+                </div>
+
+                <div class="list-group-item">
+                  Body Mass Index <span id="displayBmi">
+                  </span>
+                </div>
+
+                <div class="list-group-item">
+                  BMI Range <span id="displayBmiRange">
+                  </span>
+                </div>
+
+                <div class="list-group-item">
+                  Lean Mass <span id="displayLeanMass">
+                  </span>
+                </div>
+
+                <div class="list-group-item">
+                  Fat Mass <span id="displayFatMass">
+                  </span>
+                </div>
+
+                <div class="list-group-item">
+                  TDEE
+                  <span class="list-group-item tooltip"> <span class="hidden">(Info)</span><span class="tooltiptext">Total Daily Energy Expenditure</span></span>
+
+                  <span id="displayTdee">
+
+                  </span>
+
+                </div>
+
+              </div>
+              <!-- /.list-group -->
+
+            </div>
+            <!-- /.panel-body -->
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+      </div>
+
+      <!-- /.panel -->
+      <div class="row chartRow">
+
+
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+
+              <h4 class="card-title mb-0">Timeline</h4>
+              <div class="pull-right">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default btn-xs" id="newEditBtn">Edit</button>
+                </div>
+              </div>
+            </div>
+            <hr class="mb-4">
+
+            <!-- Use as chart for database results -->
+            <div class="panel-body">
+              <div class="row">
+                <div class="">
+                  <div class="table-responsive">
+                    <table class="table  table-hover table-striped" id="tableId">
+                      <thead>
+                        <tr>
+                          <th>Date</th>
+                          <th>Weight</th>
+                          <th>BF %</th>
+                          <th>Neck</th>
+                          <th>Waist</th>
+                          <th>Hip</th>
+                          <th>Delete</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td>2018-07-06</td>
+                          <td>120</td>
+                          <td>12</td>
+                          <td>21.2</td>
+                          <td>27</td>
+                          <td>36</td>
+                          <td><i class="far fa-trash-alt"></i></td>
+
+                        </tr>
+                      </tbody>
+
+                    </table>
+                  </div>
+                  <!-- /.table-responsive -->
+                </div>
+
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.panel-body -->
+          </div>
+        </div>
+        <!-- end row -->
+
+
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="card-title mb-0">Progress Chart</h4>
+            </div>
+
+            <hr class="mb-4">
+            <div class="panel-body">
+              <canvas id="myChart"></canvas>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+  <!-- /#page-wrapper -->
+
+  <!-- <script src="test.js"></script> -->
+  <!-- <script src="moment.js"></script> -->
+  <script src="script.js"></script>
+  <!-- <script src="graph.js"></script> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
 
 </body>
 
