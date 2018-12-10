@@ -6,6 +6,9 @@
    font-size: 16px !important;
  }
 
+
+
+
  .navbar-default .navbar-brand {
    color: #a9a5a5 !important;
  }
@@ -104,7 +107,7 @@
      padding-left: 15px;
      padding-right: 15px;
      padding-bottom: 15px;
-     padding-top: 0px !important;
+     /* padding-top: 0px !important; */
    }
 
    .sidebar-nav {
@@ -224,8 +227,8 @@
  }
 
  #panel1 {
-   background-color: white;
-   border-color: #ddd0;
+   /* background-color: white;
+   border-color: #ddd0; */
  }
 
  hr {
@@ -234,13 +237,13 @@
  }
 
  #panel2 {
-   background-color: white;
-   border-color: #ddd0;
+   /* background-color: white;
+   border-color: #ddd0; */
  }
 
  .panel-heading {
-   background-color: white !important;
-   border-color: #ddd0 !important;
+   /* background-color: white !important;
+   border-color: #ddd0 !important; */
  }
 
  #breadcrumb {
@@ -294,6 +297,26 @@
      padding: 0 30px;
      border-left: 1px solid #e7e7e7;
    }
+
+   .boxRow {
+     /* width: 90%; */
+     display: flex;
+     margin: auto;
+     justify-content: center;
+   }
+
+   .chartRow{
+     display: flex;
+     margin: auto;
+     justify-content: center;
+
+   }
+
+
+    .panel {
+      margin: 5px;
+    }
+
  }
 
  .sidebar .sidebar-nav.navbar-collapse {

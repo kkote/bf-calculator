@@ -8,7 +8,7 @@ window.onload = function () {
 
 	// Global Options:
 	Chart.defaults.global.defaultFontColor = 'grey';
-	Chart.defaults.global.defaultFontSize = 16;
+	Chart.defaults.global.defaultFontSize = 14;
 
 	var data = {
 		labels: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ],
@@ -18,6 +18,7 @@ window.onload = function () {
 			lineTension: 0.1,
 			backgroundColor: "rgba(0,255,0,0.4)",
 			borderColor: "green", // The main line color
+
 			pointBackgroundColor: "green",
 			pointHitRadius: 10,
 			data: [ 120, 130, 140, 135, 145, 135, 140 ],
