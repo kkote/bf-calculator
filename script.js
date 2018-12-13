@@ -16,10 +16,10 @@ window.onload = function () {
 			label: "Weight",
 			fill: false,
 			lineTension: 0.1,
-			backgroundColor: "rgba(0,255,0,0.4)",
-			borderColor: "green", // The main line color
+			backgroundColor: "#286090",
+			borderColor: "#286090", // The main line color
 
-			pointBackgroundColor: "green",
+			pointBackgroundColor: "#286090",
 			pointHitRadius: 10,
 			data: [ 120, 130, 140, 135, 145, 135, 140 ],
 			spanGaps: true,
