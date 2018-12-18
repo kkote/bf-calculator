@@ -1,10 +1,9 @@
 # Body Stats Calculator
-> Add measurements to calculate get body fat and BMI.
+> Add measurements to calculate body fat and BMI.
 
 
-To use enter your measurements list and display will show body fat percentage, Bf category, body mass index, BMI category, lean mass in lbs, and fat mass in lbs.
-It will also add each calculated amount to list that is used to track progress and past amounts. You can edit stats on the table of past measurements instead of deleting and adding again.
-On the side navigation bar you can sign in or look at you charts.
+Enter your measurements to Calculate body fat percentage/range, body mass index/range and lean mass.
+Adds measurements to table and charts progress.
 
 
 ![](header.png)
@@ -12,23 +11,13 @@ On the side navigation bar you can sign in or look at you charts.
 
 ## Usage example
 
-This Calculator is for people who like to keep track of measurements, curious about stats, to losing weight, to gaining weight, and tracking progress.
+Calculator is for people who like to keep track of measurements, curious about stats, to losing weight, to gain weight, or tracking progress.
 
-
-## Todo
-
-* move delete button to header
-* add more stats - button
-* chart for table
-* signin/ cache
-
-## Getting Started
-
-To use clone or download and open in your text editor.
 
 
 ## Built With
 
+* Vanilla JavaScript
 * [Startbootstrap](https://startbootstrap.com/template-overviews/sb-admin-2/) - Layout
 * [CoreUI](https://coreui.io/) - Layout
 * [Chart.js](http://www.chartjs.org/) - Chart
@@ -38,7 +27,7 @@ To use clone or download and open in your text editor.
 
 ## Author
 
-* **Katherine Kote** - *Initial work* - [KateGray52](https://github.com/KateGray52)
+* **Katherine Kote**  [KateGray52](https://github.com/KateGray52)
 
 ## License
 
