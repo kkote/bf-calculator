@@ -27,27 +27,21 @@
     </nav>
 
     <div id="page-wrapper">
-
       <div class="row boxRow">
         <div class="col-xs-12 col-sm-6 col-md-6">
           <div class="panel panel-default">
-
             <div id="panel1" class=" panel-heading">
               <h4>Your Measurements</h4>
             </div>
             <hr class="mb-4">
             <div class="panel-body">
-
               <div class="card card-register mx-auto mt-5">
                 <div class="card-body">
                   <form id="calcForm" class="vertical">
                     <div class="form-group">
 
-
-
                       <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-label-group " id="maleOrFemale">
-
                           <div class="form-label-group">
                             <input name="gender" type="radio" class="" value="Male" id="maleId" checked>
                             <label for="maleOrFemale">Male</label>
@@ -59,7 +53,6 @@
                         </div>
                       </div>
 
-
                       <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-label-group">
                           <input type="date" id="dateInputId" name="dateInput" class="form-control-x" required="" value="2018-08-06">
@@ -67,75 +60,51 @@
                         </div>
                       </div>
 
-
-
-
-
                       <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-label-group">
-
                           <label for="ageInputId"><span class="labelInput">Age</span> <input type="number" id="ageInputId" name="AgeInput" class="form-control-x" required="" step="" value="26" placeholder="Age"> </label>
                         </div>
                       </div>
                       <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-label-group">
                           <label for="weightInputId"><span class="labelInput">Weight</span> <input type="number" id="weightInputId" name="weightInput" class="form-control-x" required="" step="any" value="133"></label>
-
-
                         </div>
                       </div>
 
-
-
                       <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-label-group">
-
                           <label for="feetInputId"><span class="labelInput">Feet</span><input type="number" id="feetInputId" name="feetInput" class="form-control-x" placeholder="5" required="" value="5" step="any"></label>
                         </div>
                       </div>
                       <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-label-group">
-
                           <label for="inchInputId"><span class="labelInput">Inches</span><input type="number" id="inchInputId" name="inchInput" class="form-control-x" placeholder="3" required="" value="4" step="any"></label>
                         </div>
                       </div>
-
-
-
-                      <div class="Inchlabel">
+                      <!-- <div class="Inchlabel">
                         <div>Enter in Inches
                         </div>
                         <div>Activity Level:
                         </div>
-                      </div>
-
-
+                      </div> -->
 
                       <div class="form-row">
-
-
                         <div class="col-xs-6 col-sm-6 col-md-6">
                           <div class="form-label-group">
-
+                            <label id="">Enter In Inches</label>
                             <label for="hipsInputId"><span class="labelInput">Hips</span><input type="number" id="hipsInputId" name="hipsInput" class="form-control-x" placeholder="Hips" required="" value="36" step="any"></label>
                           </div>
-
-
                           <div class="form-label-group">
-
                             <label for="waistInputId"><span class="labelInput">Waist</span> <input type="number" id="waistInputId" name="waistInput" class="form-control-x" placeholder="Waist" required="" value="33" step="any"></label>
                           </div>
-
                           <div class="form-label-group ">
-
                             <label for="neckInputId"><span class="labelInput">Neck</span> <input type="number" id="neckInputId" name="necksInput" class="form-control-x" placeholder="Neck" required="" onsubmit="myScript" value="13" step="any"></label>
                           </div>
-
                         </div>
 
-
+                          <div class="col-xs-6 col-sm-6 col-md-6">
                         <div class="form-label-group " id="activityLevel">
-                          <!-- <label id="activityLabel">Activity Level:</label> -->
+                          <label id="activityLabel">Activity Level:</label>
                           <div>
                             <input name="activity" type="radio" class="" value="1.2" id="SedId"><label for="SedId">None</label>
                           </div>
@@ -152,24 +121,19 @@
                           <div>
                             <input name="activity" class="" type="radio" value="1.9" id="extraId"><label for="extraId">Extra </label>
                           </div>
-
                         </div>
-
                       </div>
-
-                      <div class="btn-row form-row">
-                        <button id="newChartBtn" class="btn btn-primary btn-block" type="submit" style="margin-right: 10px">Submit</button>
-                        <button class="btn btn-warning btn-block" type="reset" value="Reset">Reset</button>
                       </div>
 
                     </div>
-
-
                     <!-- end from group -->
-                    <!-- <div class="btn-row form-row">
+
+                    <div class="btn-row form-row">
                       <button id="newChartBtn" class="btn btn-primary btn-block" type="submit" style="margin-right: 10px">Submit</button>
                       <button class="btn btn-warning btn-block" type="reset" value="Reset">Reset</button>
-                    </div> -->
+                    </div>
+
+
                   </form>
                   <!-- end card body -->
                 </div>
@@ -215,49 +179,32 @@
                 <div class="list-group-item">
                   TDEE
                   <span class="list-group-item tooltip"> <span class="hidden">(Info)</span><span class="tooltiptext">(Total Daily Energy Expenditure)</span></span>
-
                   <span id="displayTdee">
-
                   </span>
-
                 </div>
-
               </div>
               <!-- /.list-group -->
-
             </div>
             <!-- /.panel-body -->
           </div>
-
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="card-title mb-0">Progress Chart</h4>
             </div>
-
             <hr class="mb-4">
             <div class="panel-body">
               <canvas id="myChart"></canvas>
             </div>
-
           </div>
-
-
         </div>
-
       </div>
-
       <div class="row">
-
       </div>
-
       <!-- /.panel -->
       <div class="row chartRow">
-
-
         <div class="col-xs-6 col-sm-10 col-md-10">
           <div class="panel panel-default">
             <div class="panel-heading">
-
               <h4 class="card-title mb-0">Timeline</h4>
               <div class="pull-right">
                 <div class="btn-group">
@@ -266,7 +213,6 @@
               </div>
             </div>
             <hr class="mb-4">
-
             <!-- Use as chart for database results -->
             <div class="panel-body">
               <div class="row ">
@@ -284,7 +230,6 @@
                           <th>Delete</th>
                         </tr>
                       </thead>
-
                       <tbody>
                         <tr>
                           <td>2018-07-06</td>
@@ -302,7 +247,6 @@
                   </div>
                   <!-- /.table-responsive -->
                 </div>
-
               </div>
               <!-- /.row -->
             </div>
@@ -310,34 +254,12 @@
           </div>
         </div>
         <!-- end row -->
-<!--
-
-        <div class="col-xs-6 col-sm-6 col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="card-title mb-0">Progress Chart</h4>
-            </div>
-
-            <hr class="mb-4">
-            <div class="panel-body">
-              <canvas id="myChart"></canvas>
-            </div>
-
-          </div>
-        </div> -->
-
-
       </div>
-
     </div>
   </div>
-  <!-- /#page-wrapper -->
 
-  <!-- <script src="test.js"></script> -->
-  <!-- <script src="moment.js"></script> -->
   <script src="script.js"></script>
   <!-- <script src="graph.js"></script> -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
 
 </body>
 

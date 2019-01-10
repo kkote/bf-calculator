@@ -311,6 +311,7 @@
 
  .btn-row {
    display: inline-flex;
+   width: 70%;
  }
 
  .btn-block {
