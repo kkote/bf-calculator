@@ -18,12 +18,12 @@
  }
 
  .navbar-default .navbar-brand {
-   color: #eee !important;
+   color: black !important;
  }
 
  .navbar-default {
-   background-color: #555 !important;
-   border-color: #e7e7e700 !important;
+   background-color: white !important;
+   color: black;
  }
 
  .form-group {
@@ -101,8 +101,10 @@
    .form-control-x {
      display: block;
      width: 100%;
-     padding: 6px 12px;
+     /* padding: 6px 12px; */
      font-size: 14px;
+     padding: 6px ;
+     text-align: center;
      line-height: 1.42857143;
      color: #555;
      background-color: #fff;
@@ -138,9 +140,7 @@
    }
 
    .panel-body {
-     padding-left: 15px;
-     padding-right: 15px;
-     padding-bottom: 15px;
+     padding: 5px !important;
    }
 
    .sidebar-nav {
@@ -218,6 +218,8 @@
    background-color: #fff;
    background-image: none;
    display: inline-flex;
+   display: flex;
+justify-content: center;
  }
 
  #maleOrFemale label {
@@ -226,7 +228,7 @@
  }
 
  #maleOrFemale .form-label-group {
-   margin-right: 15px;
+   /* margin-right: 15px; */
  }
 
  .Inchlabel {}
@@ -272,6 +274,7 @@
    padding: 10px !important;
    display: flex !important;
    flex-direction: column;
+
  }
 
  hr {
@@ -284,26 +287,6 @@
    border-color: #ddd0 !important;
  }
 
- #breadcrumb {
-   background-color: #fff;
- }
-
- .breadcrumb {
-   position: relative;
-   border-bottom: 1px solid #e3e8ec;
-   display: -ms-flexbox;
-   display: flex;
-   -ms-flex-wrap: wrap;
-   flex-wrap: wrap;
-   padding: 1rem 1.25rem !important;
-   margin-bottom: 1.5rem;
-   list-style: none;
-   background-color: #fff;
- }
-
- ol {
-   margin-top: 0;
- }
 
  .btn-block+.btn-block {
    margin-top: 0px !important;
@@ -333,7 +316,7 @@
  @media (min-width: 768px) {
    #page-wrapper {
      position: inherit;
-     padding: 0 30px;
+     padding: 20px;
      border-left: 1px solid #e7e7e7;
    }
 
@@ -352,6 +335,11 @@
    .panel {
      margin: 5px;
    }
+
+   .list-group-item {
+       width: 25%;
+     }
+
  }
 
  .sidebar .sidebar-nav.navbar-collapse {
