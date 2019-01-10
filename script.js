@@ -180,8 +180,8 @@ window.onload = function () {
 		// calculate lean mass and fat mass
 		var fatMassNum = parseInt( weightNum * bfToPercent );
 		var LeanMassNum = parseInt( weightNum - fatMassNum );
-		document.getElementById( "displayLeanMass" ).innerHTML = LeanMassNum + " lbs";
-		document.getElementById( "displayFatMass" ).innerHTML = fatMassNum + " lbs";
+		document.getElementById( "displayLeanMass" ).innerHTML = "  Lean  " + LeanMassNum + " lbs";
+		document.getElementById( "displayFatMass" ).innerHTML = "Fat  " + fatMassNum + " lbs  ";
 
 
 		//find tdee from gender and activity level
