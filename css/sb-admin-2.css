@@ -336,11 +336,21 @@ justify-content: center;
      margin: 5px;
    }
 
+
+
    .list-group-item {
        width: 25%;
      }
 
  }
+
+ @media (min-width: 1024px){
+   .form-label-group label {
+       padding: 10px;
+   }
+
+ }
+
 
  .sidebar .sidebar-nav.navbar-collapse {
    background: #19252be6;
