@@ -12,6 +12,7 @@ h4 {
 }
 .btn {
  box-shadow: 2px rgba(0, 0, 0, .05) !important;
+ width: 25%;
 }
 }
 .navbar-brand {
@@ -157,6 +158,9 @@ input[type=radio] {
  }
 }
 @media only screen and (max-width: 768px) {
+  .navbar {
+    display: flex;
+  }
  .chartRow {
    display: none;
  }
@@ -292,7 +296,8 @@ hr {
 }
 .btn-row {
  display: inline-flex;
- width: 70%;
+ width: 100%;
+ justify-content: space-between;
 }
 .btn-block {
  padding-left: 3rem;

@@ -22,6 +22,10 @@
 			<div class="navbar-header">
 				<a class="navbar-brand" href="index.html">Body Stats Calculator</a>
 			</div>
+			<!-- <div class="navIcon">
+
+
+			</div> -->
 			<ul class="nav navbar-top-links navbar-right">
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i></a>
@@ -86,39 +90,39 @@
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-label-group">
-													<input class="form-control-x" id="dateInputId" name="dateInput" required="" type="date" value="2018-08-06"> <label for="dateInputId">Date</label>
+													<input class="form-control-x" id="dateInputId" name="dateInput" required="" type="date" value=""> <label for="dateInputId">Date</label>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-label-group">
-													<label for="ageInputId"><span class="labelInput">Age</span> <input class="form-control-x" id="ageInputId" name="AgeInput" placeholder="18-99" required="" step="1" type="number" value="26" min="18" max="99" ></label>
+													<label for="ageInputId"><span class="labelInput">Age</span> <input class="form-control-x" id="ageInputId" name="AgeInput" placeholder="" required="" step="1" type="number" value="" min="18" max="99" ></label>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-label-group">
-													<label for="weightInputId"><span class="labelInput">Weight</span> <input class="form-control-x" id="weightInputId" name="weightInput" required="" step="any" type="number" value="133"></label>
+													<label for="weightInputId"><span class="labelInput">Weight</span> <input class="form-control-x" id="weightInputId" name="weightInput" required="" step="any" type="number" value=""></label>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-label-group">
-													<label for="feetInputId"><span class="labelInput">Feet</span><input class="form-control-x" id="feetInputId" name="feetInput" placeholder="5" required="" step="1" type="number" value="5" min="4" max="7"></label>
+													<label for="feetInputId"><span class="labelInput">Feet</span><input class="form-control-x" id="feetInputId" name="feetInput" placeholder="" required="" step="1" type="number" value="" min="4" max="7"></label>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-label-group">
-													<label for="inchInputId"><span class="labelInput">Inches</span><input class="form-control-x" id="inchInputId" name="inchInput" placeholder="3" required="" step="" type="number" value="4" min="0" max="11"></label>
+													<label for="inchInputId"><span class="labelInput">Inches</span><input class="form-control-x" id="inchInputId" name="inchInput" placeholder="" required="" step="" type="number" value="" min="0" max="11"></label>
 												</div>
 											</div>
 											<div class="form-row">
 												<div class="col-xs-6 col-sm-6 col-md-6">
 													<div class="form-label-group">
-														<label id="">Enter In Inches</label> <label for="hipsInputId"><span class="labelInput">Hips</span><input class="form-control-x" id="hipsInputId" name="hipsInput" placeholder="Hips" required="" step="any" type="number" value="36" min="25" max="50"></label>
+														<label id="">Enter In Inches</label> <label for="hipsInputId"><span class="labelInput">Hips</span><input class="form-control-x" id="hipsInputId" name="hipsInput" placeholder="" required="" step="any" type="number" value="" min="25" max="50"></label>
 													</div>
 													<div class="form-label-group">
-														<label for="waistInputId"><span class="labelInput">Waist</span> <input class="form-control-x" id="waistInputId" name="waistInput" placeholder="Waist" required="" step="any" type="number" value="33" min="18" max="50"></label>
+														<label for="waistInputId"><span class="labelInput">Waist</span> <input class="form-control-x" id="waistInputId" name="waistInput" placeholder="" required="" step="any" type="number" value="" min="18" max="50"></label>
 													</div>
 													<div class="form-label-group">
-														<label for="neckInputId"><span class="labelInput">Neck</span> <input class="form-control-x" id="neckInputId" name="necksInput" onsubmit="myScript" placeholder="Neck" required="" step="any" type="number" value="13" min="8" max="25"></label>
+														<label for="neckInputId"><span class="labelInput">Neck</span> <input class="form-control-x" id="neckInputId" name="necksInput" onsubmit="myScript" placeholder="" required="" step="any" type="number" value="" min="8" max="25"></label>
 													</div>
 												</div>
 												<div class="col-xs-6 col-sm-6 col-md-6">
@@ -144,7 +148,9 @@
 											</div>
 										</div><!-- end from group -->
 										<div class="btn-row form-row">
-											<button class="btn btn-primary btn-block" id="newChartBtn" style="margin-right: 10px" type="submit">Submit</button> <button class="btn btn-warning btn-block" type="reset" value="Reset">Reset</button>
+											<button class="btn btn-primary" id="newChartBtn"  type="submit">Submit</button>
+											 <button class="btn btn-warning " type="reset" value="Reset">Reset</button>
+											 <button class="btn " type="button" id="exampleButton">Example</button>
 										</div>
 									</form><!-- end card body -->
 								</div>

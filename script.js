@@ -21,7 +21,7 @@ window.onload = function () {
 
 			pointBackgroundColor: "#286090",
 			pointHitRadius: 10,
-			data: [ 120, 130, 140, 135, 145, 135, 140 ],
+			data: [ 120, 130, 125, 127 ],
 			spanGaps: true,
 		} ]
 	};
@@ -81,6 +81,18 @@ window.onload = function () {
 			x.contentEditable = "true";
 			newEditBtn.innerHTML = "Save";
 		}
+	} );
+
+	exampleButton.addEventListener( "click", function () {
+		// var x = document.getElementById( "calcForm");
+		 document.getElementById( "dateInputId" ).value ="2019-02-06";
+		document.getElementById( "ageInputId" ).value = "26";
+		document.getElementById( "neckInputId" ).value="12";
+		document.getElementById( "hipsInputId" ).value="35";
+		document.getElementById( "waistInputId" ).value="32";
+		document.getElementById( "weightInputId" ).value="132";
+		document.getElementById( "feetInputId" ).value="5";
+		document.getElementById( "inchInputId" ).value="5";
 	} );
 
 
