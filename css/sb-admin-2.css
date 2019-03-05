@@ -69,7 +69,7 @@ label {
  .sidebar {
    z-index: 1;
    position: absolute;
-   width: 50px;
+   /* width: 50px; */
    margin-top: 51px;
    height: -webkit-fill-available;
  }

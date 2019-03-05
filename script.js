@@ -1,3 +1,4 @@
+window.addEventListener('load', function(){}, false)
 window.onload = function () {
 	// Just Make sure to return false so that your request will not go the server script
 
@@ -119,9 +120,11 @@ window.onload = function () {
 			function Log10( X ) {
 				return ( Math.log( X ) / Math.log( 10 ) );
 			};
+			console.log(Log10(101.76));
 			if ( genderId == "Male" ) {
 				var percentFat = ( ( 86.010 * ( Log10( waistNum - neckNum ) ) ) - ( 70.041 * ( Log10( heightNum ) ) ) + 36.76 );
 				var bf = percentFat.toPrecision( 3 );
+
 				return bf
 			} else {
 				var percentFat = ( 163.205 * Log10( ( ( waistNum + hipNum ) - neckNum ) ) - 97.684 * Log10( heightNum ) - 78.387 );
