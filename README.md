@@ -11,16 +11,18 @@ Adds measurements to table and charts progress.
 
 ## Usage example
 
-Calculator is for people who like to keep track of measurements, curious about stats, to losing weight, to gain weight, or tracking progress.
+Calculator is to keep track of body measurements, to losing weight, to gain weight, or track progress.
 
 
 
 ## Built With
 
-* Vanilla JavaScript
+* JavaScript
 * [Startbootstrap](https://startbootstrap.com/template-overviews/sb-admin-2/) - Layout
 * [CoreUI](https://coreui.io/) - Layout
 * [Chart.js](http://www.chartjs.org/) - Chart
+* [Jasmine](https://jasmine.github.io/) - Unit Testing
+
 
 
 
