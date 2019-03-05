@@ -120,7 +120,7 @@ window.onload = function () {
 			function Log10( X ) {
 				return ( Math.log( X ) / Math.log( 10 ) );
 			};
-			console.log(Log10(101.76));
+			// console.log(101.76);
 			if ( genderId == "Male" ) {
 				var percentFat = ( ( 86.010 * ( Log10( waistNum - neckNum ) ) ) - ( 70.041 * ( Log10( heightNum ) ) ) + 36.76 );
 				var bf = percentFat.toPrecision( 3 );
