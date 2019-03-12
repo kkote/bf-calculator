@@ -1,6 +1,9 @@
-window.addEventListener('load', function(){}, false)
-window.onload = function () {
-	// Just Make sure to return false so that your request will not go the server script
+window.addEventListener('load',
+  function() {
+    allCode();
+  }, false);
+
+
 
 	var canvas = document.getElementById( "myChart" );
 	var ctx = canvas.getContext( '2d' );
@@ -37,9 +40,16 @@ window.onload = function () {
 		}
 	};
 
-	init();
+
+
+	function addDataTable( monthsLabel, numberData ) {
+		myChart.data.datasets[ 0 ].data[ monthsLabel ] = numberData;
+		myChart.update();
+	};
+
 
 	function init() {
+		console.log("text");
 		// Chart declaration:
 		myChart = new Chart( ctx, {
 			type: chartType,
@@ -47,6 +57,17 @@ window.onload = function () {
 			options: options
 		} );
 	}
+
+
+
+function allCode(){
+	// Just Make sure to return false so that your request will not go the server script
+
+
+
+	init();
+
+
 
 
 	function newChartBtn() {
@@ -65,24 +86,21 @@ window.onload = function () {
 
 	} ;
 
-	function addDataTable( monthsLabel, numberData ) {
-		myChart.data.datasets[ 0 ].data[ monthsLabel ] = numberData;
-		myChart.update();
-	};
+
 
 	var formId = document.getElementById( "calcForm" );
 
 	// edit button for table
-	newEditBtn.addEventListener( "click", function () {
-		var x = document.getElementById( "tableId" );
-		if ( x.contentEditable == "true" ) {
-			x.contentEditable = "false";
-			newEditBtn.innerHTML = "Edit";
-		} else {
-			x.contentEditable = "true";
-			newEditBtn.innerHTML = "Save";
-		}
-	} );
+	// newEditBtn.addEventListener( "click", function () {
+	// 	var x = document.getElementById( "tableId" );
+	// 	if ( x.contentEditable == "true" ) {
+	// 		x.contentEditable = "false";
+	// 		newEditBtn.innerHTML = "Edit";
+	// 	} else {
+	// 		x.contentEditable = "true";
+	// 		newEditBtn.innerHTML = "Save";
+	// 	}
+	// } );
 
 	exampleButton.addEventListener( "click", function () {
 		// var x = document.getElementById( "calcForm");
@@ -251,10 +269,9 @@ window.onload = function () {
 
     newChartBtn();
 
-
 		return false
-	}
 
+	}
 
 
 };
