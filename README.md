@@ -29,7 +29,7 @@ Calculator is to keep track of body measurements, to losing weight, to gain weig
 
 ## Author
 
-* **Katherine Kote**  [KateGray52](https://github.com/KateGray52)
+* **Kay D. Kote**  [KKote](https://github.com/kkote)
 
 ## License
 
