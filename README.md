@@ -6,12 +6,11 @@ Enter your measurements to Calculate body fat percentage/range, body mass index/
 Adds measurements to table and charts progress.
 
 
-![](header.png)
 
 
 ## Usage example
 
-Calculator is to keep track of body measurements, to losing weight, to gain weight, or track progress.
+Calculator to keep track of body measurements, to losing weight, to gain weight, or track fitness progress.
 
 
 
@@ -29,7 +28,7 @@ Calculator is to keep track of body measurements, to losing weight, to gain weig
 
 ## Author
 
-* **Kay D. Kote**  [KKote](https://github.com/kkote)
+* [KKote](https://github.com/kkote)
 
 ## License
 
@@ -38,4 +37,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Inspiration [Calculator.com] - Bodyfat Calculator
+* Inspiration [Calculator.com] - Body fat Calculator
