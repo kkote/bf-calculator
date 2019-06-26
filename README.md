@@ -20,7 +20,7 @@ Calculator to keep track of body measurements, to losing weight, to gain weight,
 * [Startbootstrap](https://startbootstrap.com/template-overviews/sb-admin-2/) - Layout
 * [CoreUI](https://coreui.io/) - Layout
 * [Chart.js](http://www.chartjs.org/) - Chart
-* [Jasmine](https://jasmine.github.io/) - Unit Testing
+
 
 
 
