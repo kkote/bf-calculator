@@ -70,7 +70,7 @@ label {
 
   #page-wrapper {
     position: inherit;
-    margin: 0 0 0 75px;
+    /* margin: 0 0 0 75px; */
     padding: 0 30px;
     border-left: 1px solid #e7e7e7;
   }
@@ -104,7 +104,7 @@ label {
 }
 
 .form-group {
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .form-label-group label {
@@ -364,6 +364,7 @@ hr {
   display: inline-flex;
   width: 100%;
   justify-content: space-between;
+  padding: 10px;
 }
 
 .btn-block {
