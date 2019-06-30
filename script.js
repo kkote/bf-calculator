@@ -5,18 +5,16 @@ window.addEventListener('load',
 
 
 var now = new Date();
-console.log(now);
 var month = now.getMonth();
 month = month+1;
-console.log(month);
 var day = now.getDate();
-
-if ((month.toString().length) == 1) {
+if ((month.toString().length) === 1) {
   month = `0${month}`
 }
+// if (day.toString().length) === 1) {
+//   day= `0${day}`
+// }
 var nowDate = ( `${now.getFullYear()}-${month}-${day}`);
-console.log(nowDate);
-
 
 
 var canvas = document.getElementById("myChart");
@@ -36,21 +34,9 @@ var data = {
     lineTension: 0.1,
     backgroundColor: "#286090",
     borderColor: "#286090", // The main line color
-
     pointBackgroundColor: "#286090",
     pointHitRadius: 10,
     data: [120, 130, 125, 127],
-
-    // data: [{
-    //            x: 120,
-    //            y: "Jan"
-    //        }, {
-    //            x: 150,
-    //            y: "Mar"
-    //        }, {
-    //            x: 130,
-    //            y: "June"
-    //        }],
     spanGaps: true,
   }]
 };
@@ -62,12 +48,6 @@ var options = {
         beginAtZero: false,
       }
     }]
-    // xAxes: [{
-    //     type: 'time',
-    //     time: {
-    //         unit: 'month'
-    //   }
-    // }]
   }
 };
 
@@ -82,32 +62,24 @@ function newChartBtn() {
 
   for (var i = 0, row; row = getTable.rows[i]; i++) {
    //iterate through rows
-   //rows would be accessed using the "row" variable assigned in the for loop
    var tableWeight = (getTable.rows[i].cells[1].innerHTML);
-   var tableDate = (getTable.rows[i].cells[0].innerHTML);
-   var monthFormat = moment(tableDate).format("MM");
+   var tableDateNew = new Date(getTable.rows[i].cells[0].innerHTML);
 
-   var monthsNumberForChart = (monthFormat - 1);
-
+   var month = tableDateNew.getMonth();
+   month = month+1;
+   var day = now.getDate();
+   if ((month.toString().length) === 1) {
+     month = `0${month}`
+   }
+   // console.log(`the date is ${tableDateNew}`)
+   //  console.log(`the date is ${month}`)
+   var monthsNumberForChart = (month - 1);
    var weightForChartData = tableWeight;
 
    addDataTable(monthsNumberForChart, weightForChartData);
-   }
 
-  // var monthCell = 0;
-  // var weightCell = 1;
-  //
-  // var tableWeight = (getTable.rows[tableRow].cells[weightCell].innerHTML);
-  // var tableDate = (getTable.rows[tableRow].cells[monthCell].innerHTML);
+    }
 
-
-  // var monthFormat = moment(tableDate).format("MM");
-  //
-  // var monthsNumberForChart = (monthFormat - 1);
-  //
-  // var weightForChartData = tableWeight;
-  //
-  // addDataTable(monthsNumberForChart, weightForChartData);
 
 };
 
@@ -123,8 +95,16 @@ function init() {
 }
 
 
+
+
+
 function allCode() {
   // Just Make sure to return false so that your request will not go the server script
+
+
+
+
+
 
   init();
 
@@ -132,8 +112,6 @@ function allCode() {
   var formId = document.getElementById("calcForm");
 
   exampleButton.addEventListener("click", function() {
-    // var x = document.getElementById( "calcForm");
-    // document.getElementById("dateInputId").value = "2019-04-06";
     document.getElementById("dateInputId").value = `${nowDate}`;
     document.getElementById("ageInputId").value = "26";
     document.getElementById("neckInputId").value = "12";
@@ -145,23 +123,9 @@ function allCode() {
   });
 
 
+
   formId.onsubmit = function() {
 
-    // var objects = [];
-    // var form = document.getElementById('form');
-    // form.onsubmit = function(e) {
-    //   var item = document.getElementById('item').value,
-    //     category = document.getElementById('category').value,
-    //     price = document.getElementById('price').value;
-    //   objects.push({
-    //     item: {
-    //       'category': category,
-    //       'price': parseFloat(price)
-    //     }
-    //   });
-    //   console.log(JSON.stringify(objects));
-    //   e.preventDefault();
-    // }
 
     // retrieving input data after submit
     var dateNum = document.getElementById("dateInputId").value;
@@ -176,6 +140,7 @@ function allCode() {
     var activityNum = document.querySelector('input[name="activity"]:checked').value;
     var activityNumber = parseFloat(activityNum);
     var heightNum = ((feetNum * 12) + inchNum);
+
 
 
     //find body fat percentage by gender
@@ -195,11 +160,8 @@ function allCode() {
 
     //calculate body mass index from inputs
     var bmi = ((weightNum / (heightNum * heightNum)) * 703).toPrecision(3);
-
     document.getElementById("displayBmi").innerHTML = bmi;
-    // document.getElementById("displayInput").innerHTML = bf + "%";
     document.getElementById("displayInput").innerHTML = `${bf}%`;
-
 
     // find and put bmi range in side panel
     function displayBmiRange(bmi) {
@@ -208,8 +170,6 @@ function allCode() {
             :(bmi >= 25 && bmi < 30)   ? "Overweight"
             :                            "Obese";
     };
-    // var display = displayBmiRange(bmi);
-    // document.getElementById("displayBmiRange").innerHTML = display;
     document.getElementById("displayBmiRange").innerHTML = displayBmiRange(bmi);
 
     // Bodyfat percentage ranges
@@ -234,8 +194,6 @@ function allCode() {
     };
 
     //display bf range
-    // var bfRangeOutput = bfRanges(bf);
-    // document.getElementById("displayBfRange").innerText = bfRangeOutput;
     document.getElementById("displayBfRange").innerText = bfRanges(bf);
     // calculate lean mass and fat mass
     var fatMassNum = parseInt(weightNum * (bf / 100));
@@ -244,15 +202,13 @@ function allCode() {
     document.getElementById("displayLeanMass").innerHTML = `Fat  ${LeanMassNum} lbs`;
     document.getElementById("displayFatMass").innerHTML = `Fat  ${fatMassNum} lbs`;
 
-    //find tdee from gender and activity level
+    //find tdee from gender, Basal Metabolic rate(bmr) and activity level
     function findTdee(genderId, activityNumber) {
       if (genderId == "Male") {
-        //calculate Basal Metabolic rate
         var bmr = 66 + (6.23 * weightNum) + (12.7 * heightNum) - (6.8 * ageNum).toPrecision(4);
         var tdee = (bmr * activityNumber);
         return tdee
       } else {
-        //calculate Basal Metabolic rate
         var bmr = 655 + (4.35 * weightNum) + (4.7 * heightNum) - (4.7 * ageNum).toPrecision(4);
         var tdee = (bmr * activityNumber);
         return tdee
@@ -260,12 +216,10 @@ function allCode() {
     };
 
     var tdee = (findTdee(genderId, activityNumber).toPrecision(4));
-    // document.getElementById("displayTdee").innerHTML = tdee + " calories";
     document.getElementById("displayTdee").innerHTML = `${tdee} calories`;
 
     function insert_Row() {
       var xTable = document.getElementById('tableId');
-      // var tr = document.createElement('tr');
       var tbody = xTable.getElementsByTagName('tbody')[0];
       var newRow = tbody.insertRow(0);
 
@@ -289,6 +243,9 @@ function allCode() {
     return false
 
   }
+
+
+  // return false
 
 
 };
