@@ -65,24 +65,19 @@ function newChartBtn() {
    var tableWeight = (getTable.rows[i].cells[1].innerHTML);
    var tableDateNew = new Date(getTable.rows[i].cells[0].innerHTML);
 
-   var month = tableDateNew.getMonth();
-   month = month+1;
+   var month = (tableDateNew.getMonth())+1;
+   var year = tableDateNew.getFullYear();
+   // month = month+1;
    var day = now.getDate();
    if ((month.toString().length) === 1) {
      month = `0${month}`
    }
-   // console.log(`the date is ${tableDateNew}`)
-   //  console.log(`the date is ${month}`)
    var monthsNumberForChart = (month - 1);
-   var weightForChartData = tableWeight;
 
-   addDataTable(monthsNumberForChart, weightForChartData);
+   addDataTable(monthsNumberForChart, tableWeight);
 
     }
-
-
 };
-
 
 
 function init() {
@@ -95,19 +90,10 @@ function init() {
 }
 
 
-
-
-
 function allCode() {
   // Just Make sure to return false so that your request will not go the server script
 
-
-
-
-
-
   init();
-
 
   var formId = document.getElementById("calcForm");
 
@@ -126,7 +112,6 @@ function allCode() {
 
   formId.onsubmit = function() {
 
-
     // retrieving input data after submit
     var dateNum = document.getElementById("dateInputId").value;
     var ageNum = document.getElementById("ageInputId").valueAsNumber;
@@ -140,7 +125,6 @@ function allCode() {
     var activityNum = document.querySelector('input[name="activity"]:checked').value;
     var activityNumber = parseFloat(activityNum);
     var heightNum = ((feetNum * 12) + inchNum);
-
 
 
     //find body fat percentage by gender
@@ -237,15 +221,10 @@ function allCode() {
     }
 
     insert_Row()
-
     newChartBtn();
 
     return false
 
   }
-
-
-  // return false
-
 
 };
