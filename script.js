@@ -96,6 +96,22 @@ function allCode() {
 
   formId.onsubmit = function() {
 
+    // var objects = [];
+    // var form = document.getElementById('form');
+    // form.onsubmit = function(e) {
+    //   var item = document.getElementById('item').value,
+    //     category = document.getElementById('category').value,
+    //     price = document.getElementById('price').value;
+    //   objects.push({
+    //     item: {
+    //       'category': category,
+    //       'price': parseFloat(price)
+    //     }
+    //   });
+    //   console.log(JSON.stringify(objects));
+    //   e.preventDefault();
+    // }
+
 
     // retrieving input data after submit
     var dateNum = document.getElementById("dateInputId").value;
@@ -114,19 +130,15 @@ function allCode() {
 
     //find body fat percentage by gender
     function findBf(genderId) {
-      function Log10(X) {
-        return (Math.log(X) / Math.log(10));
-      };
-      // console.log(101.76);
-      if (genderId == "Male") {
-        var percentFat = ((86.010 * (Log10(waistNum - neckNum))) - (70.041 * (Log10(heightNum))) + 36.76);
-        var bf = percentFat.toPrecision(3);
 
-        return bf
+      const Log10 = X => (Math.log(X) / Math.log(10));
+
+      if (genderId == "Male") {
+        var percentFat = ((86.010 * (Log10(waistNum - neckNum))) - (70.041 * (Log10(heightNum))) + 36.76).toPrecision(3);
+        return percentFat
       } else {
-        var percentFat = (163.205 * Log10(((waistNum + hipNum) - neckNum)) - 97.684 * Log10(heightNum) - 78.387);
-        var bf = percentFat.toPrecision(3);
-        return bf
+        var percentFat = (163.205 * Log10(((waistNum + hipNum) - neckNum)) - 97.684 * Log10(heightNum) - 78.387).toPrecision(3);
+        return percentFat
       };
     };
     var bf = findBf(genderId);
@@ -138,15 +150,10 @@ function allCode() {
 
     // find and put bmi range in side panel
     function displayBmiRange(bmi) {
-      if (bmi < 18.5) {
-        return "Underweight";
-      } else if (bmi >= 18.5 && bmi < 25) {
-        return "Normal"
-      } else if (bmi >= 25 && bmi < 30) {
-        return "Overweight";
-      } else if (bmi >= 30) {
-        return "Obese";
-      };
+      return (bmi < 18.5)              ? "Underweight"
+            :(bmi >= 18.5 && bmi < 25) ? "Normal"
+            :(bmi >= 25 && bmi < 30)   ? "Overweight"
+            :                            "Obese";
     };
     var display = displayBmiRange(bmi);
     document.getElementById("displayBmiRange").innerHTML = display;
@@ -154,35 +161,26 @@ function allCode() {
 
     // Bodyfat percentage ranges
     function bfRanges(bf) {
-      if (genderId == "Male") {
-        if (bf < 3) {
-          return "Underfat";
-        } else if (bf >= 3 && bf <= 5) {
-          return "Essential Fat"
-        } else if (bf >= 5 && bf <= 13) {
-          return "Athletes";
-        } else if (bf >= 13 && bf <= 17) {
-          return "Fitness";
-        } else if (bf >= 17 && bf <= 24) {
-          return "Average";
-        } else if (bf > 24) {
-          return "Obese";
-        };
-      } else {
-        if (bf < 10) {
-          return "Underfat";
-        } else if (bf >= 10 && bf <= 13) {
-          return "Essential Fat"
-        } else if (bf >= 13 && bf <= 20) {
-          return "Athletes";
-        } else if (bf >= 20 && bf <= 25) {
-          return "Fitness";
-        } else if (bf >= 25 && bf <= 32) {
-          return "Average";
-        } else if (bf > 32) {
-          return "Obese";
-        };
-      };
+
+      function between(bf, min, max) {
+        return bf >= min && bf <= max;
+      }
+
+       if (genderId == "Male") {
+         return (bf < 3) ?            "Underfat"
+              : between(bf, 3, 5)   ? "Essential Fat"
+              : between(bf, 5, 13)  ? "Athletes"
+              : between(bf, 13, 17) ? "Fitness"
+              : between(bf, 17, 24) ? "Average"
+              :                       "Obese";
+       }  else {
+         return (bf < 10) ?           "Underfat"
+              : between(bf, 10, 13) ? "Essential Fat"
+              : between(bf, 13, 20) ? "Athletes"
+              : between(bf, 20, 25) ? "Fitness"
+              : between(bf, 25, 32) ? "Average"
+              :                       "Obese";
+          };
     };
 
     //display bf range
