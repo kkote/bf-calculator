@@ -3,6 +3,11 @@ window.addEventListener('load',
     allCode();
   }, false);
 
+// window.onload = (event) => {
+//   console.log('page is fully loaded');
+// };
+
+
 
 var now = new Date();
 var month = now.getMonth();
@@ -102,7 +107,43 @@ function allCode() {
 
 
 
+
+  function toJSONString(form) {
+    var obj = {};
+    var elements = form.querySelectorAll("input, select, textarea");
+    for (var i = 0; i < elements.length; ++i) {
+      var element = elements[i];
+      var name = element.name;
+      var value = element.value;
+      if (name) {
+        obj[name] = value;
+      }
+    }
+    console.log(obj);
+    console.log(obj['AgeInput']);
+    console.log(obj.AgeInput);
+    return JSON.stringify(obj);
+  }
+
+
+
+
+
+  var formId = document.getElementById("calcForm");
+  var output = document.getElementById("output");
+
+
   formId.onsubmit = function() {
+
+
+
+    var json = toJSONString(this);
+    // output.innerHTML = json;
+    console.log(json)
+    var jsonParse = JSON.parse(json);
+    // console.log(jsonParse);
+
+
     // retrieving input data after submit
     var dateNum = document.getElementById("dateInputId").value;
     var ageNum = document.getElementById("ageInputId").valueAsNumber;
@@ -120,7 +161,7 @@ function allCode() {
 
 
     //find body fat percentage by gender
-    function findBf(genderId) {
+    function findBf(genderId,waistNum,neckNum,heightNum,hipNum) {
       const Log10 = X => (Math.log(X) / Math.log(10));
 
       if (genderId == "Male") {
@@ -131,7 +172,7 @@ function allCode() {
         return percentFat
       };
     };
-    var bf = findBf(genderId);
+    var bf = findBf(genderId, waistNum, neckNum, heightNum, hipNum);
 
 
 
@@ -222,5 +263,6 @@ function allCode() {
     return false
 
   }
-
+//end of on submit
 };
+//end of allCode
