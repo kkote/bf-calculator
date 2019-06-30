@@ -1,12 +1,7 @@
 window.addEventListener('load',
   function() {
-    allCode();
+    init();
   }, false);
-
-// window.onload = (event) => {
-//   console.log('page is fully loaded');
-// };
-
 
 
 var now = new Date();
@@ -16,11 +11,7 @@ var day = now.getDate();
 if ((month.toString().length) === 1) {
   month = `0${month}`
 }
-// if (day.toString().length) === 1) {
-//   day= `0${day}`
-// }
 var nowDate = ( `${now.getFullYear()}-${month}-${day}`);
-
 
 
 var canvas = document.getElementById("myChart");
@@ -62,10 +53,8 @@ function addDataTable(monthsLabel, numberData) {
 function newChartBtn() {
   var getTable = (document.getElementById("tableId"));
   for (var i = 0, row; row = getTable.rows[i]; i++) {
-   //iterate through rows
    var tableWeight = (getTable.rows[i].cells[1].innerHTML);
    var tableDateNew = new Date(getTable.rows[i].cells[0].innerHTML);
-
    var month = (tableDateNew.getMonth())+1;
    var year = tableDateNew.getFullYear();
    // month = month+1;
@@ -77,9 +66,7 @@ function newChartBtn() {
    addDataTable(monthsNumberForChart, tableWeight);
     }
 };
-
-function init() {
-  // Chart declaration:
+function chartInit() {
   myChart = new Chart(ctx, {
     type: chartType,
     data: data,
@@ -88,10 +75,9 @@ function init() {
 }
 
 
+function init() {
 
-function allCode() {
-  // return false so that your request will not go the server script
-  init();
+  chartInit();
   var formId = document.getElementById("calcForm");
 
   exampleButton.addEventListener("click", function() {
@@ -106,59 +92,22 @@ function allCode() {
   });
 
 
-
-
-  function toJSONString(form) {
-    var obj = {};
-    var elements = form.querySelectorAll("input, select, textarea");
-    for (var i = 0; i < elements.length; ++i) {
-      var element = elements[i];
-      var name = element.name;
-      var value = element.value;
-      if (name) {
-        obj[name] = value;
-      }
-    }
-    console.log(obj);
-    console.log(obj['AgeInput']);
-    console.log(obj.AgeInput);
-    return JSON.stringify(obj);
-  }
-
-
-
-
-
-  var formId = document.getElementById("calcForm");
-  var output = document.getElementById("output");
-
-
   formId.onsubmit = function() {
 
-
-
-    var json = toJSONString(this);
-    // output.innerHTML = json;
-    console.log(json)
-    var jsonParse = JSON.parse(json);
-    // console.log(jsonParse);
-
-
     // retrieving input data after submit
-    var dateNum = document.getElementById("dateInputId").value;
-    var ageNum = document.getElementById("ageInputId").valueAsNumber;
-    var neckNum = document.getElementById("neckInputId").valueAsNumber;
-    var hipNum = document.getElementById("hipsInputId").valueAsNumber;
-    var waistNum = document.getElementById("waistInputId").valueAsNumber;
-    var weightNum = document.getElementById("weightInputId").valueAsNumber;
-    var feetNum = document.getElementById("feetInputId").valueAsNumber;
-    var inchNum = document.getElementById("inchInputId").valueAsNumber;
-    var genderId = document.querySelector('input[name="gender"]:checked').value;
-    var activityNum = document.querySelector('input[name="activity"]:checked').value;
-    var activityNumber = parseFloat(activityNum);
+    var dateNum  = document.getElementById("dateInputId").value,
+        ageNum   = document.getElementById("ageInputId").valueAsNumber,
+        neckNum  = document.getElementById("neckInputId").valueAsNumber,
+        hipNum   = document.getElementById("hipsInputId").valueAsNumber,
+        waistNum = document.getElementById("waistInputId").valueAsNumber,
+        weight   = document.getElementById("weightInputId").valueAsNumber,
+        feetNum  = document.getElementById("feetInputId").valueAsNumber,
+        inchNum  = document.getElementById("inchInputId").valueAsNumber,
+        genderId = document.querySelector('input[name="gender"]:checked').value,
+        activity = document.querySelector('input[name="activity"]:checked').value;
+
+    var activityNumber = parseFloat(activity);
     var heightNum = ((feetNum * 12) + inchNum);
-
-
 
     //find body fat percentage by gender
     function findBf(genderId,waistNum,neckNum,heightNum,hipNum) {
@@ -172,14 +121,9 @@ function allCode() {
         return percentFat
       };
     };
-    var bf = findBf(genderId, waistNum, neckNum, heightNum, hipNum);
 
-
-
-    //calculate body mass index from inputs
-    var bmi = ((weightNum / (heightNum * heightNum)) * 703).toPrecision(3);
-    document.getElementById("displayBmi").innerHTML = bmi;
-    document.getElementById("displayInput").innerHTML = `${bf}%`;
+    const bf = findBf(genderId, waistNum, neckNum, heightNum, hipNum);
+    const bmi = ((weight / (heightNum * heightNum)) * 703).toPrecision(3);
 
     // find and put bmi range in side panel
     function displayBmiRange(bmi) {
@@ -188,8 +132,6 @@ function allCode() {
             :(bmi >= 25 && bmi < 30)   ? "Overweight"
             :                            "Obese";
     };
-    document.getElementById("displayBmiRange").innerHTML = displayBmiRange(bmi);
-
 
     // Bodyfat percentage ranges
     function bfRanges(bf) {
@@ -201,50 +143,37 @@ function allCode() {
               : between(bf, 5, 13)  ? "Athletes"
               : between(bf, 13, 17) ? "Fitness"
               : between(bf, 17, 24) ? "Average"
-              :                       "Obese";
+              :                       "Overweight";
        }  else {
          return (bf < 10) ?           "Underfat"
               : between(bf, 10, 13) ? "Essential Fat"
               : between(bf, 13, 20) ? "Athletes"
               : between(bf, 20, 25) ? "Fitness"
               : between(bf, 25, 32) ? "Average"
-              :                       "Obese";
+              :                       "Overweight";
           };
     };
 
-
-    //display bf range
-    document.getElementById("displayBfRange").innerText = bfRanges(bf);
-    // calculate lean mass and fat mass
-    var fatMassNum = parseInt(weightNum * (bf / 100));
-    var LeanMassNum = parseInt(weightNum - fatMassNum);
-    document.getElementById("displayLeanMass").innerHTML = `Fat  ${LeanMassNum} lbs`;
-    document.getElementById("displayFatMass").innerHTML = `Fat  ${fatMassNum} lbs`;
-
+    var fatMassNum = parseInt(weight * (bf / 100));
+    var LeanMassNum = parseInt(weight - fatMassNum);
 
     //find tdee from gender, Basal Metabolic rate(bmr) and activity level
     function findTdee(genderId, activityNumber) {
       if (genderId == "Male") {
-        var bmr = 66 + (6.23 * weightNum) + (12.7 * heightNum) - (6.8 * ageNum).toPrecision(4);
-        var tdee = (bmr * activityNumber);
-        return tdee
+        var bmr = 66 + (6.23 * weight) + (12.7 * heightNum) - (6.8 * ageNum);
+        return (bmr * activityNumber)
       } else {
-        var bmr = 655 + (4.35 * weightNum) + (4.7 * heightNum) - (4.7 * ageNum).toPrecision(4);
-        var tdee = (bmr * activityNumber);
-        return tdee
+        var bmr = 655 + (4.35 * weight) + (4.7 * heightNum) - (4.7 * ageNum);
+        return (bmr * activityNumber)
       };
     };
     var tdee = (findTdee(genderId, activityNumber).toPrecision(4));
-    document.getElementById("displayTdee").innerHTML = `${tdee} calories`;
-
-
 
     function insert_Row() {
       var xTable = document.getElementById('tableId');
       var tbody = xTable.getElementsByTagName('tbody')[0];
       var newRow = tbody.insertRow(0);
-
-      newRow.innerHTML = (`<td>${dateNum}</td><td>${weightNum}</td><td>${bf}</td><td>${neckNum}</td><td>${waistNum}</td><td>${hipNum}</td>`);
+      newRow.innerHTML = (`<td>${dateNum}</td><td>${weight}</td><td>${bf}</td><td>${neckNum}</td><td>${waistNum}</td><td>${hipNum}</td>`);
 
       var tdDelete = document.createElement('td');
       var theDeleteBtn = document.createElement("i");
@@ -256,13 +185,18 @@ function allCode() {
       newRow.appendChild(tdDelete)
     }
 
+    document.getElementById("displayBmi").innerHTML = bmi;
+    document.getElementById("displayInput").innerHTML = `${bf}%`;
+    document.getElementById("displayBmiRange").innerHTML = displayBmiRange(bmi);
+    document.getElementById("displayBfRange").innerText = bfRanges(bf);
+    document.getElementById("displayLean").innerHTML = `Fat  ${LeanMassNum} lbs`;
+    document.getElementById("displayFatMass").innerHTML = `Fat  ${fatMassNum} lbs`;
+    document.getElementById("displayTdee").innerHTML = `${tdee} calories`;
 
     insert_Row()
     newChartBtn();
 
     return false
-
   }
 //end of on submit
 };
-//end of allCode
