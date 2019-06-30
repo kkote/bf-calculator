@@ -4,6 +4,17 @@ window.addEventListener('load',
   }, false);
 
 
+var now = new Date();
+console.log(now);
+var month = now.getMonth();
+console.log(month);
+var day = now.getDate();
+
+if ((month.toString().length) == 1) {
+  month = `0${month}`
+}
+var nowDate = ( `${now.getFullYear()}-${month}-${day}`);
+console.log(nowDate);
 
 
 
@@ -17,7 +28,7 @@ Chart.defaults.global.defaultFontColor = 'grey';
 Chart.defaults.global.defaultFontSize = 14;
 
 var data = {
-  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+  labels: ['Jan 2019', 'Feb', 'Mar', 'Apr', 'May  2019', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec 2019'],
   datasets: [{
     label: "Weight",
     fill: false,
@@ -28,6 +39,17 @@ var data = {
     pointBackgroundColor: "#286090",
     pointHitRadius: 10,
     data: [120, 130, 125, 127],
+
+    // data: [{
+    //            x: 120,
+    //            y: "Jan"
+    //        }, {
+    //            x: 150,
+    //            y: "Mar"
+    //        }, {
+    //            x: 130,
+    //            y: "June"
+    //        }],
     spanGaps: true,
   }]
 };
@@ -36,9 +58,15 @@ var options = {
   scales: {
     yAxes: [{
       ticks: {
-        beginAtZero: false
+        beginAtZero: false,
       }
     }]
+    // xAxes: [{
+    //     type: 'time',
+    //     time: {
+    //         unit: 'month'
+    //   }
+    // }]
   }
 };
 
@@ -46,6 +74,25 @@ function addDataTable(monthsLabel, numberData) {
   myChart.data.datasets[0].data[monthsLabel] = numberData;
   myChart.update();
 };
+
+
+function newChartBtn() {
+  var getTable = (document.getElementById("tableId"));
+  var tableRow = 1;
+  var monthCell = 0;
+  var weightCell = 1;
+  var tableWeight = (getTable.rows[tableRow].cells[weightCell].innerHTML);
+  var tableDate = (getTable.rows[tableRow].cells[monthCell].innerHTML);
+  var monthFormat = moment(tableDate).format("MM");
+  // console.log(monthFormat);
+  var monthsNumberForChart = (monthFormat);
+  // console.log(monthsNumberForChart);
+  var weightForChartData = tableWeight;
+
+  addDataTable(monthsNumberForChart, weightForChartData);
+
+};
+
 
 
 function init() {
@@ -83,7 +130,8 @@ function allCode() {
 
   exampleButton.addEventListener("click", function() {
     // var x = document.getElementById( "calcForm");
-    document.getElementById("dateInputId").value = "2019-04-06";
+    // document.getElementById("dateInputId").value = "2019-04-06";
+    document.getElementById("dateInputId").value = `${nowDate}`;
     document.getElementById("ageInputId").value = "26";
     document.getElementById("neckInputId").value = "12";
     document.getElementById("hipsInputId").value = "35";
@@ -144,8 +192,11 @@ function allCode() {
 
     //calculate body mass index from inputs
     var bmi = ((weightNum / (heightNum * heightNum)) * 703).toPrecision(3);
+
     document.getElementById("displayBmi").innerHTML = bmi;
-    document.getElementById("displayInput").innerHTML = bf + "%";
+    // document.getElementById("displayInput").innerHTML = bf + "%";
+    document.getElementById("displayInput").innerHTML = `${bf}%`;
+
 
     // find and put bmi range in side panel
     function displayBmiRange(bmi) {
@@ -154,13 +205,12 @@ function allCode() {
             :(bmi >= 25 && bmi < 30)   ? "Overweight"
             :                            "Obese";
     };
-    var display = displayBmiRange(bmi);
-    document.getElementById("displayBmiRange").innerHTML = display;
-
+    // var display = displayBmiRange(bmi);
+    // document.getElementById("displayBmiRange").innerHTML = display;
+    document.getElementById("displayBmiRange").innerHTML = displayBmiRange(bmi);
 
     // Bodyfat percentage ranges
     function bfRanges(bf) {
-
       const between = (bf, min, max) => bf >= min && bf <= max;
 
        if (genderId == "Male") {
@@ -181,14 +231,14 @@ function allCode() {
     };
 
     //display bf range
-    var bfRangeOutput = bfRanges(bf);
-    document.getElementById("displayBfRange").innerText = bfRangeOutput;
-    var bfToPercent = (bf / 100);
+    // var bfRangeOutput = bfRanges(bf);
+    // document.getElementById("displayBfRange").innerText = bfRangeOutput;
+    document.getElementById("displayBfRange").innerText = bfRanges(bf);
     // calculate lean mass and fat mass
-    var fatMassNum = parseInt(weightNum * bfToPercent);
+    var fatMassNum = parseInt(weightNum * (bf / 100));
     var LeanMassNum = parseInt(weightNum - fatMassNum);
-    document.getElementById("displayLeanMass").innerHTML = "  Lean  " + LeanMassNum + " lbs";
 
+    document.getElementById("displayLeanMass").innerHTML = `Fat  ${LeanMassNum} lbs`;
     document.getElementById("displayFatMass").innerHTML = `Fat  ${fatMassNum} lbs`;
 
     //find tdee from gender and activity level
@@ -207,28 +257,29 @@ function allCode() {
     };
 
     var tdee = (findTdee(genderId, activityNumber).toPrecision(4));
-    document.getElementById("displayTdee").innerHTML = tdee + " calories";
+    // document.getElementById("displayTdee").innerHTML = tdee + " calories";
+    document.getElementById("displayTdee").innerHTML = `${tdee} calories`;
 
-    function insert_Row(){
-         var xTable = document.getElementById('tableId');
-         // var tr = document.createElement('tr');
-         var tbody = xTable.getElementsByTagName('tbody')[0];
-         var newRow = tbody.insertRow(0);
+    function insert_Row() {
+      var xTable = document.getElementById('tableId');
+      // var tr = document.createElement('tr');
+      var tbody = xTable.getElementsByTagName('tbody')[0];
+      var newRow = tbody.insertRow(0);
 
-         newRow.innerHTML = (`<td>${dateNum}</td><td>${weightNum}</td><td>${bf}</td><td>${neckNum}</td><td>${waistNum}</td><td>${hipNum}</td>`);
+      newRow.innerHTML = (`<td>${dateNum}</td><td>${weightNum}</td><td>${bf}</td><td>${neckNum}</td><td>${waistNum}</td><td>${hipNum}</td>`);
 
-         var tdDelete = document.createElement('td');
-         var theDeleteBtn = document.createElement("i");
-         theDeleteBtn.setAttribute("class", "far fa-trash-alt");
-         theDeleteBtn.addEventListener("click", function() {
-           xTable.deleteRow(this.parentNode.parentNode.rowIndex)
-         });
+      var tdDelete = document.createElement('td');
+      var theDeleteBtn = document.createElement("i");
+      theDeleteBtn.setAttribute("class", "far fa-trash-alt");
+      theDeleteBtn.addEventListener("click", function() {
+        xTable.deleteRow(this.parentNode.parentNode.rowIndex)
+      });
 
-         tdDelete.appendChild(theDeleteBtn)
-         newRow.appendChild(tdDelete)
-   }
+      tdDelete.appendChild(theDeleteBtn)
+      newRow.appendChild(tdDelete)
+    }
 
-   insert_Row()
+    insert_Row()
 
     newChartBtn();
 
