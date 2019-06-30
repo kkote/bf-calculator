@@ -4,6 +4,9 @@ window.addEventListener('load',
   }, false);
 
 
+
+
+
 var canvas = document.getElementById("myChart");
 var ctx = canvas.getContext('2d');
 var chartType = 'line';
@@ -46,7 +49,6 @@ function addDataTable(monthsLabel, numberData) {
 
 
 function init() {
-  console.log("text");
   // Chart declaration:
   myChart = new Chart(ctx, {
     type: chartType,
@@ -62,8 +64,7 @@ function allCode() {
   init();
 
   function newChartBtn() {
-    var getTable =
-      (document.getElementById("tableId"));
+    var getTable = (document.getElementById("tableId"));
     var tableRow = 1;
     var monthCell = 0;
     var weightCell = 1;
@@ -78,17 +79,16 @@ function allCode() {
   };
 
 
-
   var formId = document.getElementById("calcForm");
 
   exampleButton.addEventListener("click", function() {
     // var x = document.getElementById( "calcForm");
-    document.getElementById("dateInputId").value = "2019-02-06";
+    document.getElementById("dateInputId").value = "2019-04-06";
     document.getElementById("ageInputId").value = "26";
     document.getElementById("neckInputId").value = "12";
     document.getElementById("hipsInputId").value = "35";
     document.getElementById("waistInputId").value = "32";
-    document.getElementById("weightInputId").value = "132";
+    document.getElementById("weightInputId").value = "150";
     document.getElementById("feetInputId").value = "5";
     document.getElementById("inchInputId").value = "5";
   });
@@ -111,7 +111,6 @@ function allCode() {
     //   console.log(JSON.stringify(objects));
     //   e.preventDefault();
     // }
-
 
     // retrieving input data after submit
     var dateNum = document.getElementById("dateInputId").value;
@@ -162,9 +161,7 @@ function allCode() {
     // Bodyfat percentage ranges
     function bfRanges(bf) {
 
-      function between(bf, min, max) {
-        return bf >= min && bf <= max;
-      }
+      const between = (bf, min, max) => bf >= min && bf <= max;
 
        if (genderId == "Male") {
          return (bf < 3) ?            "Underfat"
@@ -191,21 +188,20 @@ function allCode() {
     var fatMassNum = parseInt(weightNum * bfToPercent);
     var LeanMassNum = parseInt(weightNum - fatMassNum);
     document.getElementById("displayLeanMass").innerHTML = "  Lean  " + LeanMassNum + " lbs";
-    document.getElementById("displayFatMass").innerHTML = "Fat  " + fatMassNum + " lbs  ";
 
+    document.getElementById("displayFatMass").innerHTML = `Fat  ${fatMassNum} lbs`;
 
     //find tdee from gender and activity level
     function findTdee(genderId, activityNumber) {
       if (genderId == "Male") {
-        var bmr = 66 + (6.23 * weightNum) + (12.7 * heightNum) - (6.8 * ageNum);
-        var bmrNum = bmr.toPrecision(4);
-        var tdee = (bmrNum * activityNumber);
-
+        //calculate Basal Metabolic rate
+        var bmr = 66 + (6.23 * weightNum) + (12.7 * heightNum) - (6.8 * ageNum).toPrecision(4);
+        var tdee = (bmr * activityNumber);
         return tdee
       } else {
-        var bmr = 655 + (4.35 * weightNum) + (4.7 * heightNum) - (4.7 * ageNum);
-        var bmrNum = bmr.toPrecision(4);
-        var tdee = (bmrNum * activityNumber);
+        //calculate Basal Metabolic rate
+        var bmr = 655 + (4.35 * weightNum) + (4.7 * heightNum) - (4.7 * ageNum).toPrecision(4);
+        var tdee = (bmr * activityNumber);
         return tdee
       };
     };
@@ -213,36 +209,26 @@ function allCode() {
     var tdee = (findTdee(genderId, activityNumber).toPrecision(4));
     document.getElementById("displayTdee").innerHTML = tdee + " calories";
 
+    function insert_Row(){
+         var xTable = document.getElementById('tableId');
+         // var tr = document.createElement('tr');
+         var tbody = xTable.getElementsByTagName('tbody')[0];
+         var newRow = tbody.insertRow(0);
 
+         newRow.innerHTML = (`<td>${dateNum}</td><td>${weightNum}</td><td>${bf}</td><td>${neckNum}</td><td>${waistNum}</td><td>${hipNum}</td>`);
 
-    // add to table
-    var table = document.getElementById('tableId');
-    var tbody = table.getElementsByTagName('tbody')[0];
+         var tdDelete = document.createElement('td');
+         var theDeleteBtn = document.createElement("i");
+         theDeleteBtn.setAttribute("class", "far fa-trash-alt");
+         theDeleteBtn.addEventListener("click", function() {
+           xTable.deleteRow(this.parentNode.parentNode.rowIndex)
+         });
 
-    // Insert a row in the table at the last row
-    var newRow = tbody.insertRow(0);
+         tdDelete.appendChild(theDeleteBtn)
+         newRow.appendChild(tdDelete)
+   }
 
-    // Insert a cell in the row at and  Append a text node to the cell
-    // insert cell, create text node with form input, and append to cell.
-
-    var dateRow = newRow.insertCell(0).append(document.createTextNode(dateNum));
-    var weightRow = newRow.insertCell(1).append(document.createTextNode(weightNum));
-    var bfRow = newRow.insertCell(2).append(document.createTextNode(bf));
-    var neckRow = newRow.insertCell(3).append(document.createTextNode(neckNum));
-    var waistRow = newRow.insertCell(4).append(document.createTextNode(waistNum));
-    var hipsRow = newRow.insertCell(5).append(document.createTextNode(hipNum));
-    var deleteRow = newRow.insertCell(6);
-
-    //delete button
-    var newDelBtn = document.createElement("i");
-    newDelBtn.setAttribute("class", "far fa-trash-alt");
-    newDelBtn.addEventListener("click", function() {
-      table.deleteRow(this.parentNode.parentNode.rowIndex)
-    });
-    document.body.appendChild(newDelBtn);
-    deleteRow.append(newDelBtn);
-
-
+   insert_Row()
 
     newChartBtn();
 
