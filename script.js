@@ -7,6 +7,7 @@ window.addEventListener('load',
 var now = new Date();
 console.log(now);
 var month = now.getMonth();
+month = month+1;
 console.log(month);
 var day = now.getDate();
 
@@ -78,18 +79,35 @@ function addDataTable(monthsLabel, numberData) {
 
 function newChartBtn() {
   var getTable = (document.getElementById("tableId"));
-  var tableRow = 1;
-  var monthCell = 0;
-  var weightCell = 1;
-  var tableWeight = (getTable.rows[tableRow].cells[weightCell].innerHTML);
-  var tableDate = (getTable.rows[tableRow].cells[monthCell].innerHTML);
-  var monthFormat = moment(tableDate).format("MM");
-  // console.log(monthFormat);
-  var monthsNumberForChart = (monthFormat);
-  // console.log(monthsNumberForChart);
-  var weightForChartData = tableWeight;
 
-  addDataTable(monthsNumberForChart, weightForChartData);
+  for (var i = 0, row; row = getTable.rows[i]; i++) {
+   //iterate through rows
+   //rows would be accessed using the "row" variable assigned in the for loop
+   var tableWeight = (getTable.rows[i].cells[1].innerHTML);
+   var tableDate = (getTable.rows[i].cells[0].innerHTML);
+   var monthFormat = moment(tableDate).format("MM");
+
+   var monthsNumberForChart = (monthFormat - 1);
+
+   var weightForChartData = tableWeight;
+
+   addDataTable(monthsNumberForChart, weightForChartData);
+   }
+
+  // var monthCell = 0;
+  // var weightCell = 1;
+  //
+  // var tableWeight = (getTable.rows[tableRow].cells[weightCell].innerHTML);
+  // var tableDate = (getTable.rows[tableRow].cells[monthCell].innerHTML);
+
+
+  // var monthFormat = moment(tableDate).format("MM");
+  //
+  // var monthsNumberForChart = (monthFormat - 1);
+  //
+  // var weightForChartData = tableWeight;
+  //
+  // addDataTable(monthsNumberForChart, weightForChartData);
 
 };
 
@@ -109,21 +127,6 @@ function allCode() {
   // Just Make sure to return false so that your request will not go the server script
 
   init();
-
-  function newChartBtn() {
-    var getTable = (document.getElementById("tableId"));
-    var tableRow = 1;
-    var monthCell = 0;
-    var weightCell = 1;
-    var tableWeight = (getTable.rows[tableRow].cells[weightCell].innerHTML);
-    var tableDate = (getTable.rows[tableRow].cells[monthCell].innerHTML);
-    var monthFormat = moment(tableDate).format("MM");
-    var monthsNumberForChart = (monthFormat - 1);
-    var weightForChartData = tableWeight;
-
-    addDataTable(monthsNumberForChart, weightForChartData);
-
-  };
 
 
   var formId = document.getElementById("calcForm");
