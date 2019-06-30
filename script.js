@@ -17,15 +17,14 @@ if ((month.toString().length) === 1) {
 var nowDate = ( `${now.getFullYear()}-${month}-${day}`);
 
 
+
 var canvas = document.getElementById("myChart");
 var ctx = canvas.getContext('2d');
 var chartType = 'line';
 var myChart;
-
 // Global Options:
 Chart.defaults.global.defaultFontColor = 'grey';
 Chart.defaults.global.defaultFontSize = 14;
-
 var data = {
   labels: ['Jan 2019', 'Feb', 'Mar', 'Apr', 'May  2019', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec 2019'],
   datasets: [{
@@ -40,7 +39,6 @@ var data = {
     spanGaps: true,
   }]
 };
-
 var options = {
   scales: {
     yAxes: [{
@@ -56,10 +54,8 @@ function addDataTable(monthsLabel, numberData) {
   myChart.update();
 };
 
-
 function newChartBtn() {
   var getTable = (document.getElementById("tableId"));
-
   for (var i = 0, row; row = getTable.rows[i]; i++) {
    //iterate through rows
    var tableWeight = (getTable.rows[i].cells[1].innerHTML);
@@ -73,12 +69,9 @@ function newChartBtn() {
      month = `0${month}`
    }
    var monthsNumberForChart = (month - 1);
-
    addDataTable(monthsNumberForChart, tableWeight);
-
     }
 };
-
 
 function init() {
   // Chart declaration:
@@ -90,11 +83,10 @@ function init() {
 }
 
 
+
 function allCode() {
-  // Just Make sure to return false so that your request will not go the server script
-
+  // return false so that your request will not go the server script
   init();
-
   var formId = document.getElementById("calcForm");
 
   exampleButton.addEventListener("click", function() {
@@ -111,7 +103,6 @@ function allCode() {
 
 
   formId.onsubmit = function() {
-
     // retrieving input data after submit
     var dateNum = document.getElementById("dateInputId").value;
     var ageNum = document.getElementById("ageInputId").valueAsNumber;
@@ -127,9 +118,9 @@ function allCode() {
     var heightNum = ((feetNum * 12) + inchNum);
 
 
+
     //find body fat percentage by gender
     function findBf(genderId) {
-
       const Log10 = X => (Math.log(X) / Math.log(10));
 
       if (genderId == "Male") {
@@ -141,6 +132,8 @@ function allCode() {
       };
     };
     var bf = findBf(genderId);
+
+
 
     //calculate body mass index from inputs
     var bmi = ((weightNum / (heightNum * heightNum)) * 703).toPrecision(3);
@@ -155,6 +148,7 @@ function allCode() {
             :                            "Obese";
     };
     document.getElementById("displayBmiRange").innerHTML = displayBmiRange(bmi);
+
 
     // Bodyfat percentage ranges
     function bfRanges(bf) {
@@ -177,14 +171,15 @@ function allCode() {
           };
     };
 
+
     //display bf range
     document.getElementById("displayBfRange").innerText = bfRanges(bf);
     // calculate lean mass and fat mass
     var fatMassNum = parseInt(weightNum * (bf / 100));
     var LeanMassNum = parseInt(weightNum - fatMassNum);
-
     document.getElementById("displayLeanMass").innerHTML = `Fat  ${LeanMassNum} lbs`;
     document.getElementById("displayFatMass").innerHTML = `Fat  ${fatMassNum} lbs`;
+
 
     //find tdee from gender, Basal Metabolic rate(bmr) and activity level
     function findTdee(genderId, activityNumber) {
@@ -198,9 +193,10 @@ function allCode() {
         return tdee
       };
     };
-
     var tdee = (findTdee(genderId, activityNumber).toPrecision(4));
     document.getElementById("displayTdee").innerHTML = `${tdee} calories`;
+
+
 
     function insert_Row() {
       var xTable = document.getElementById('tableId');
@@ -215,10 +211,10 @@ function allCode() {
       theDeleteBtn.addEventListener("click", function() {
         xTable.deleteRow(this.parentNode.parentNode.rowIndex)
       });
-
       tdDelete.appendChild(theDeleteBtn)
       newRow.appendChild(tdDelete)
     }
+
 
     insert_Row()
     newChartBtn();
