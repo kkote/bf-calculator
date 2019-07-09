@@ -6,6 +6,8 @@ bower_components
 /temp
 /data
 jasmine-3.3.0
+karma.conf.js
+scripttest.js
 
 /chart
 
