@@ -11,6 +11,9 @@ var day = now.getDate();
 if ((month.toString().length) === 1) {
   month = `0${month}`
 }
+if ((day.toString().length) === 1) {
+  day = `0${day}`
+}
 var nowDate = ( `${now.getFullYear()}-${month}-${day}`);
 
 
@@ -82,6 +85,8 @@ function init() {
 
   exampleButton.addEventListener("click", function() {
     document.getElementById("dateInputId").value = `${nowDate}`;
+    // document.getElementById("dateInputId").value = "2019-01-01";
+
     document.getElementById("ageInputId").value = "26";
     document.getElementById("neckInputId").value = "12";
     document.getElementById("hipsInputId").value = "35";
