@@ -1,16 +1,18 @@
 # Body Stats Calculator
-> Add measurements to calculate body fat and BMI.
 
-
-Enter your measurements to Calculate body fat percentage/range, body mass index/range and lean mass.
-Adds measurements to table and charts progress.
+Enter your measurements to calculate body fat percentage, body mass index and total daily energy expenditure.
 
 
 
 
-## Usage example
+# How to Use
+1. Clone or Download repo.
+2. cd into folder.
+3. Run  ``` npm install ```.
+5. Open index.html in browser
+6. Make changes in index.html, script.js, css
 
-Calculator to keep track of body measurements, to losing weight, to gain weight, or track fitness progress.
+
 
 
 
@@ -23,12 +25,9 @@ Calculator to keep track of body measurements, to losing weight, to gain weight,
 
 
 
-
-
-
 ## Author
 
-* [KKote](https://github.com/kkote)
+* [kkote](https://github.com/kkote)
 
 ## License
 
@@ -38,3 +37,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Inspiration [Calculator.com] - Body fat Calculator
+
+
